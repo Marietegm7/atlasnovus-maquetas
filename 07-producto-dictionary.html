@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Novus · 07 Producto Dictionary (Y2K)</title>
+<style>
+:root{--paper:#FFFFFF;--ink:#000000;--red:#FF1800;--ink-2:#4A4A4A;--line:#D9D9D9;--surface:#F4F3F0;--font:Helvetica,Arial,sans-serif;
+--c1:#C9473B;--c2:#E8B23A;--c3:#2F5D8A;--c4:#E9DCC3;--c5:#3C6E57;--c6:#D98BA0;--c7:#1F2A44;--c8:#F2E3B3;--c9:#B5562E;
+--holo:var(--red);
+--chrome:linear-gradient(var(--ink),var(--ink));
+--display:Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.5 var(--font);color:var(--ink);background:var(--paper);overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:#fff;padding:12px;z-index:40}
+/* ticker (05) */
+.ticker{background:var(--red);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:700;font-size:14px}
+.ticker div{display:inline-flex;gap:32px;padding:8px 0;animation:tick 28s linear infinite}
+.ticker span::after{content:"";display:inline-block;width:8px;height:8px;background:var(--ink);margin-left:32px}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* header (05) */
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--ink)}
+.bar{display:flex;align-items:center;gap:32px;min-height:64px}
+.logo{font-weight:700;font-size:22px;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+nav ul{display:flex;gap:24px;list-style:none}
+header nav a{text-decoration:none;font-size:15px;display:inline-flex;min-height:44px;align-items:center;font-weight:700}
+header nav a:hover{color:var(--red)}
+header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--ink)}
+.cart{min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}
+.cart b{background:var(--ink);color:#fff;min-width:28px;height:28px;display:inline-grid;place-items:center;font-size:13px;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.cart b.bump{transform:scale(1.35);background:var(--holo);color:var(--ink);outline:2px solid var(--ink)}
+.menu-note{display:none;font-size:12px;color:var(--ink-2);max-width:120px;line-height:1.2}
+/* breadcrumbs */
+.crumbs ol{display:flex;flex-wrap:wrap;align-items:center;list-style:none;font-size:14px;color:var(--ink-2);padding:8px 0}
+.crumbs li+li::before{content:"/";margin:0 8px}
+.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+.crumbs a:hover{color:var(--ink)}
+.crumbs [aria-current]{color:var(--ink);font-weight:700}
+/* buttons (05) + glossy */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;font:700 14px var(--font);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:var(--red);color:var(--ink);border-color:var(--red);transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.sec{background:#fff;color:var(--ink)}
+.btn.sec:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.gloss{box-shadow:inset 0 1px 0 rgba(255,255,255,.35);background-image:linear-gradient(180deg,rgba(255,255,255,.18) 0,rgba(255,255,255,.18) 50%,rgba(255,255,255,0) 50%)}
+.btn.done,.btn.done:hover{background:var(--holo);color:var(--ink);border:2px solid var(--ink);transform:none}
+/* sticker */
+.sticker{display:inline-block;font:900 13px/1 var(--display);padding:8px 14px;border:2px solid var(--ink);border-radius:999px;background:var(--holo);background-size:200% 100%;color:var(--ink);transform:rotate(-5deg);animation:shimmer 6s linear infinite alternate;white-space:nowrap}
+@keyframes shimmer{to{background-position:100% 0}}
+/* pixel progress */
+.px{display:inline-flex;gap:3px}
+.px i{width:10px;height:10px;border:1px solid var(--ink);background:#fff}
+.px i.on{background:var(--ink)}
+/* product layout */
+.product{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:64px;padding-bottom:64px}
+.gal{grid-column:1;grid-row:1;display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px 16px;align-content:start}
+.buy{grid-column:2;grid-row:1/span 2;align-self:start;position:sticky;top:88px}
+.info{grid-column:1;grid-row:2}
+/* gallery */
+.thumbs{display:grid;gap:8px;list-style:none;align-content:start}
+.thumbs button{position:relative;display:grid;place-items:center;width:72px;aspect-ratio:4/5;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font:700 14px var(--font);cursor:pointer;overflow:hidden;transition:transform .15s}
+.thumbs button:hover{transform:translateY(-2px);border-color:var(--ink)}
+.thumbs button[aria-current="true"]{border:2px solid var(--ink);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.thumbs .mini{position:absolute;inset:0;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr}
+.slides{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;list-style:none;border:1px solid var(--ink)}
+.slides::-webkit-scrollbar{display:none}
+.slides li{scroll-snap-align:center}
+.shot{position:relative;aspect-ratio:4/5;background:var(--surface);display:flex;flex-direction:column;justify-content:space-between;padding:24px;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.shot span{max-width:320px}
+.shot small{font-size:12px;font-weight:400;letter-spacing:0;color:var(--ink-2);background:#fff;align-self:flex-start;padding:2px 6px}
+.shot.dict{display:grid;grid-template-rows:repeat(4,1fr);padding:0}
+.shot.dict div{display:grid;grid-template-columns:2fr 1fr 1fr}
+.shot.dict .mast{position:absolute;left:24px;top:24px;max-width:70%;font-size:30px;line-height:.95;letter-spacing:-.03em;background:#fff;padding:8px 12px}
+.shot.dict small{position:absolute;left:24px;bottom:24px}
+.count{grid-column:2;display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+/* buy box */
+.buy h1{font:900 40px/1 var(--display);letter-spacing:-.03em;margin:20px 0 8px}
+.by{color:var(--ink-2)}
+.rating{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0;font-size:14px}
+.rating span{color:var(--red);font-size:18px;letter-spacing:2px}
+.price{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+.tax{font-size:14px;color:var(--ink-2)}
+.stock{display:flex;align-items:center;gap:8px;margin:16px 0;font-size:14px;font-weight:700}
+.stock::before{content:"";width:10px;height:10px;background:var(--ink)}
+.buy .btn{display:flex;width:100%}
+.buy .btn+.btn{margin-top:8px}
+.ship{list-style:none;margin-top:24px;font-size:14px;border-bottom:1px solid var(--line)}
+.ship li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px}
+.ship b{flex:0 0 96px}
+.todo{color:var(--ink-2);font-style:italic}
+/* info */
+.info section{padding:40px 0 0}
+.info h2,.op h2{font-size:28px;letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
+.lead{font-size:20px;line-height:1.4;max-width:60ch}
+.note{font-size:14px;color:var(--ink-2);margin-top:12px}
+.who{list-style:none;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);border-left:1px solid var(--line)}
+.who li{padding:16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.who strong{display:block}
+.who span{font-size:14px;color:var(--ink-2)}
+.specs{display:grid;grid-template-columns:140px 1fr;font-size:15px;border-bottom:1px solid var(--line)}
+.specs dt,.specs dd{padding:12px 0;border-top:1px solid var(--line)}
+.specs dt{color:var(--ink-2)}
+/* cover component (05) */
+.cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;padding:14px;overflow:hidden;border:1px solid var(--ink);color:var(--ink);background:var(--c4)}
+.cover .mast{font-weight:700;font-size:24px;letter-spacing:-.03em;line-height:.95}
+.cover .no{font-weight:700;font-size:30px;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.cover small{font-size:11px;background:#fff;color:var(--ink-2);align-self:flex-start;padding:2px 6px}
+.cover.dark{color:#fff}
+.cover.dict{padding:0;display:grid;grid-template-rows:repeat(4,1fr)}
+.cover.dict div{display:grid;grid-template-columns:2fr 1fr 1fr}
+.cover.dict .mast{position:absolute;left:14px;top:14px;right:14px;font-size:18px;background:#fff;padding:4px 8px;color:var(--ink)}
+.cover.dict small{position:absolute;left:14px;bottom:14px}
+.cover .sticker{position:absolute;top:10px;right:8px;z-index:2;font-size:12px;padding:6px 10px;transform:rotate(5deg)}
+.item{position:relative;display:grid;grid-template-rows:auto auto auto;align-content:start}
+.item>.cover,.item>.add{grid-area:1/1}
+.item .cover{transition:transform .25s cubic-bezier(.2,.9,.3,1.3),box-shadow .25s}
+.item:hover .cover,.item:focus-within .cover{transform:translateY(-6px) rotate(-1.2deg);box-shadow:8px 8px 0 var(--ink)}
+.item h3{font-size:15px;font-weight:400;margin-top:10px;line-height:1.3}
+.item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
+.item .p{font-weight:700;font-variant-numeric:tabular-nums}
+.item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
+.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:1px solid var(--ink);background:#fff;color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .15s}
+.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
+.add.done{background:var(--ink);color:#fff;transform:scale(1)}
+/* vol. 2 band (05 .drop) */
+.drop{background:var(--ink);color:#fff;padding:56px 0}
+.drop .wrap{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+.drop h2{font-size:48px;line-height:1;letter-spacing:-.03em}
+.drop p{margin:16px 0 0;max-width:400px}
+.pair{display:grid;grid-template-columns:200px 32px 240px;gap:24px;align-items:center;justify-content:start}
+.pair figure .cover{transform:rotate(-4deg);border-color:#fff}
+.pair figcaption{font-size:14px;margin-top:14px}
+.pair .plus{font:900 40px/1 var(--display);text-align:center}
+.pair .item .cover{border-color:#fff}
+.pair .item:hover .cover,.pair .item:focus-within .cover{box-shadow:8px 8px 0 var(--red)}
+.pair .item h3{font-weight:700}
+/* opinions + FAQ */
+.block{padding-top:56px;padding-bottom:56px}
+.block.flush{padding-top:0}
+.sr{position:absolute;left:-999px}
+.two{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+.chrome{display:block;font:900 96px/.95 var(--display);letter-spacing:-.03em;color:var(--ink);margin-bottom:8px}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+ .chrome{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0;width:max-content}
+}
+.op p{max-width:36ch}
+.win{border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.win-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--ink);color:#fff;padding:6px 12px;font-size:13px;font-weight:700}
+.win-bar h2{font-size:13px;line-height:1.5}
+.win-bar span{letter-spacing:6px;white-space:nowrap}
+.win-strip{height:6px;background:var(--holo);border-bottom:2px solid var(--ink)}
+.faq{padding:0 20px}
+.faq details+details{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;min-height:56px;display:flex;align-items:center;justify-content:space-between;font-weight:700;list-style:none;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;flex:0 0 auto}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{color:var(--ink-2)}
+.faq details p{padding-bottom:16px;color:var(--ink-2);max-width:62ch}
+/* related */
+.head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 24px}
+.head h2{font-size:44px;letter-spacing:-.03em;line-height:1}
+.head a{font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.more{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
+.more .mast{font-size:26px}
+footer{padding:40px 0;display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:14px;border-top:1px solid var(--ink)}
+footer a{min-height:44px;display:inline-flex;align-items:center}
+/* toast as window panel */
+.toast{position:fixed;right:24px;bottom:24px;width:360px;max-width:calc(100% - 32px);z-index:30;transform:translateY(140%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.9,.3,1.3),visibility 0s .35s}
+.toast.show{transform:none;visibility:visible;transition-delay:0s}
+.toast-body{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;padding:14px 16px}
+.toast-body p{font-weight:700;line-height:1.3}
+.toast-body .px{grid-column:1}
+.toast-body a{grid-column:2;grid-row:1/span 2;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+.toast-body a:hover{background:var(--red);color:var(--ink)}
+/* sticky bar (móvil) */
+.sticky{display:none}
+@media (max-width:900px){
+ body{padding-bottom:84px}
+ .wrap{padding:0 16px}
+ header nav{display:none}
+ .menu-note{display:block}
+ .bar{gap:12px;min-height:56px}
+ .crumbs ol{font-size:13px;padding:0}
+ .crumbs li:last-child{display:none}
+ .product{display:block;padding-bottom:40px}
+ .gal{display:block}
+ .thumbs{display:none}
+ .slides{grid-auto-columns:88%;gap:8px;border:0;margin:0 -16px;padding:0 16px;scroll-padding:0 16px}
+ .shot{border:1px solid var(--ink);padding:16px;font-size:17px}
+ .shot.dict .mast{left:16px;top:16px;font-size:22px}
+ .shot.dict small{left:16px;bottom:16px}
+ .count{padding:8px 0;font-size:13px}
+ .buy{position:static;padding-top:16px}
+ .buy h1{font-size:28px;margin:16px 0 4px}
+ .price{font-size:32px}
+ .info section{padding:32px 0 0}
+ .info h2,.op h2{font-size:22px}
+ .lead{font-size:18px}
+ .who{grid-template-columns:1fr}
+ .specs{grid-template-columns:120px 1fr}
+ .drop{padding:40px 0}
+ .drop .wrap{grid-template-columns:1fr;gap:28px}
+ .drop h2{font-size:34px}
+ .pair{grid-template-columns:minmax(0,5fr) 20px minmax(0,6fr);gap:12px;align-items:start}
+ .pair .plus{font-size:28px;margin-top:80px}
+ .cover .mast{font-size:20px}.cover .no{font-size:24px}
+ .cover.dict .mast{font-size:14px}
+ .block{padding-top:40px;padding-bottom:40px}
+ .two{grid-template-columns:1fr;gap:32px}
+ .chrome{font-size:72px}
+ .faq{padding:0 14px}
+ .head h2{font-size:30px}
+ .more{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:58%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:10px 16px 14px;scrollbar-width:none}
+ .more li{scroll-snap-align:start}
+ .more .mast{font-size:20px}
+ .add{width:44px;height:44px}
+ .toast{left:16px;right:16px;bottom:96px;width:auto}
+ .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-top:2px solid var(--ink);transition:transform .25s,visibility 0s}
+ .sticky.off{transform:translateY(100%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
+ .sticky .p{font-weight:700;font-size:18px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .sticky .p small{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
+ .sticky .btn{flex:1;min-height:52px;padding:0 12px}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+ .ticker div{flex-wrap:wrap;white-space:normal}
+}
+.wrap.wrap{padding-inline:48px}
+.logo{white-space:nowrap}
+@media (max-width:900px){.wrap.wrap{padding-inline:16px}}
+/* real product photos (local files under img/) */
+.cover.has-photo{background:var(--paper)}
+.cover .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cover .photo.mock{inset:auto;height:auto;max-width:none}
+.cover .photo.fit{object-fit:contain}
+.shot.has-photo{padding:0;background:var(--paper);overflow:hidden}
+.shot .photo,.thumbs .photo{position:absolute;max-width:none;height:auto}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="ticker" aria-label="Novedades">
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span></div>
+</div>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#" aria-current="true">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
+  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+ </div>
+</header>
+
+<main id="main">
+ <nav class="wrap crumbs" aria-label="Migas de pan">
+  <ol><li><a href="#">Inicio</a></li><li><a href="#">Libros de diseño</a></li><li><span aria-current="page">A Dictionary of Color Combinations · Vol. 1</span></li></ol>
+ </nav>
+
+ <div class="wrap product">
+  <div class="gal">
+   <ul class="thumbs" aria-label="Elegir foto">
+    <li><button type="button" aria-current="true" aria-label="Foto 1: portada"><img class="photo" src="img/a-dictionary-of-combination-color-1.png" alt="" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-36.7%"></button></li>
+    <li><button type="button" aria-current="false" aria-label="Foto 2: doble página de combinaciones">2</button></li>
+    <li><button type="button" aria-current="false" aria-label="Foto 3: detalle de una combinación">3</button></li>
+    <li><button type="button" aria-current="false" aria-label="Foto 4: índice del libro">4</button></li>
+    <li><button type="button" aria-current="false" aria-label="Foto 5: contraportada">5</button></li>
+    <li><button type="button" aria-current="false" aria-label="Foto 6: el libro en la mano">6</button></li>
+   </ul>
+   <ul class="slides" id="slides" tabindex="0" aria-label="Fotos del libro, 6 imágenes">
+    <li><div class="shot has-photo"><img class="photo" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" width="900" height="584" style="width:232.9%;left:-65.4%;top:-14.3%"></div></li>
+    <li><div class="shot"><span>Interior: doble página de combinaciones</span><small>2 · Foto pendiente: doble página interior, en vertical</small></div></li>
+    <li><div class="shot"><span>Interior: detalle de una combinación con sus códigos</span><small>3 · Foto pendiente: detalle de una combinación</small></div></li>
+    <li><div class="shot"><span>Interior: índice del libro</span><small>4 · Foto pendiente: índice</small></div></li>
+    <li><div class="shot"><span>Contraportada</span><small>5 · Foto pendiente: contraportada</small></div></li>
+    <li><div class="shot"><span>El libro en la mano, para ver el tamaño</span><small>6 · Foto pendiente: el libro en la mano</small></div></li>
+   </ul>
+   <p class="count"><span>Portada, interior, contraportada y tamaño</span><span id="pos">1 / 6</span></p>
+  </div>
+
+  <div class="buy">
+   <span class="sticker">Best Seller <span aria-hidden="true">✦</span></span>
+   <h1>A Dictionary of Color Combinations · Vol. 1</h1>
+   <p class="by">Sanzo Wada · Seigensha</p>
+   <p class="rating"><span aria-hidden="true">★★★★★</span>238 valoraciones reales de la tienda en Vinted y Etsy · media 5,0</p>
+   <p class="price">25,65 €</p>
+   <p class="tax">Impuestos incluidos. Envío calculado en el carrito.</p>
+   <p class="stock">En stock</p>
+   <button class="btn gloss js-main" id="main-add" type="button" data-name="A Dictionary of Color Combinations · Vol. 1">Añadir al carrito</button>
+   <button class="btn sec" type="button">Comprar con Shop Pay</button>
+   <ul class="ship">
+    <li><b>Envío</b><span>Desde Fuengirola, con esquineras y funda. Coste y plazo: <span class="todo">[por confirmar]</span></span></li>
+    <li><b>Devolución</b><span>14 días desde que lo recibes</span></li>
+    <li><b>Fuera de la UE</b><span>Las tasas de aduana las paga quien recibe el pedido</span></li>
+   </ul>
+  </div>
+
+  <div class="info">
+   <section aria-labelledby="h-que">
+    <h2 id="h-que">Qué es</h2>
+    <p class="lead">El libro de cabecera de quien trabaja con color. Sanzo Wada reunió en los años 30 combinaciones de dos, tres y cuatro colores, y Seigensha las reedita con sus valores para usarlas hoy.</p>
+    <p class="note">Códigos que incluye (CMYK, RGB, HEX): <span class="todo">[por confirmar]</span></p>
+   </section>
+   <section aria-labelledby="h-quien">
+    <h2 id="h-quien">Para quién es</h2>
+    <ul class="who">
+     <li><strong>Diseñadores gráficos</strong><span>Paletas probadas para identidad, editorial y packaging</span></li>
+     <li><strong>Ilustradores</strong><span>Combinaciones listas cuando te atascas con el color</span></li>
+     <li><strong>Interioristas</strong><span>Armonías para espacios, textiles y materiales</span></li>
+     <li><strong>Estudiantes de diseño</strong><span>Un clásico para entender cómo funciona el color</span></li>
+    </ul>
+   </section>
+   <section aria-labelledby="h-ficha">
+    <h2 id="h-ficha">Ficha técnica</h2>
+    <dl class="specs">
+     <dt>Autor</dt><dd>Sanzo Wada</dd>
+     <dt>Editorial</dt><dd>Seigensha</dd>
+     <dt>Páginas</dt><dd class="todo">[por confirmar]</dd>
+     <dt>Tamaño</dt><dd class="todo">[por confirmar]</dd>
+     <dt>Idioma</dt><dd class="todo">[por confirmar]</dd>
+     <dt>ISBN</dt><dd class="todo">[por confirmar]</dd>
+    </dl>
+   </section>
+  </div>
+ </div>
+
+ <section class="drop" aria-labelledby="h-vol2">
+  <div class="wrap">
+   <div>
+    <h2 id="h-vol2">Completa la colección</h2>
+    <p>El segundo volumen de la misma obra, para tener los dos juntos en la estantería.</p>
+    <p>Pack vol. 1 + vol. 2: próximamente</p>
+   </div>
+   <div class="pair">
+    <figure>
+     <span class="cover has-photo" aria-hidden="true"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"></span>
+     <figcaption>Vol. 1, el que estás viendo</figcaption>
+    </figure>
+    <span class="plus" aria-hidden="true">+</span>
+    <div class="item">
+     <span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span>
+     <h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span>
+     <button class="add" type="button" data-name="A Dictionary of Color Combinations · Vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito">+</button>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <div class="wrap block two">
+  <section class="op" aria-labelledby="h-op">
+   <h2 id="h-op">Opiniones</h2>
+   <span class="chrome" aria-hidden="true">5,0</span>
+   <p>238 valoraciones reales de la tienda en Vinted y Etsy · media 5,0</p>
+   <p class="note">Las opiniones de este libro en la web aparecerán aquí cuando lleguen las primeras.</p>
+  </section>
+  <section class="win" aria-labelledby="h-faq">
+   <div class="win-bar"><h2 id="h-faq">Preguntas antes de comprar</h2><span aria-hidden="true">_□×</span></div>
+   <div class="win-strip" aria-hidden="true"></div>
+   <div class="faq">
+    <details open><summary>¿Está en japonés?</summary><p class="todo">[por confirmar]</p></details>
+    <details><summary>¿Cuánto cuesta el envío y cuánto tarda?</summary><p>Lo enviamos desde Fuengirola. Coste y plazo: [por confirmar]. El coste exacto se calcula en el carrito.</p></details>
+    <details><summary>¿Cómo viene protegido?</summary><p>Con esquineras de cartón y funda protectora.</p></details>
+    <details><summary>¿Puedo devolverlo?</summary><p>Sí, tienes 14 días desde que recibes el pedido.</p></details>
+    <details><summary>Vivo fuera de la UE, ¿pago aduanas?</summary><p>Sí: los envíos fuera de la UE pueden tener tasas de aduana, y las paga quien recibe el pedido.</p></details>
+   </div>
+  </section>
+ </div>
+
+ <section class="wrap block flush" aria-labelledby="h-mas">
+  <div class="head"><h2 id="h-mas">También te gustará <span aria-hidden="true">✧</span></h2><a href="#">Ver libros de diseño</a></div>
+  <ul class="more">
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s><span class="sr">antes </span>49,40 €</s></span><button class="add" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span><h3><a href="#">Vintage Japanese Canned Food Label Design Book</a></h3><span class="p">28,50 €</span><button class="add" type="button" data-name="Vintage Japanese Canned Food Label Design Book" aria-label="Añadir Vintage Japanese Canned Food Label Design Book al carrito">+</button></li>
+  </ul>
+ </section>
+</main>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+
+<div class="sticky" id="sticky" role="region" aria-label="Compra rápida">
+ <span class="p">25,65 €<small>Dictionary vol. 1</small></span>
+ <button class="btn gloss js-main" type="button" data-name="A Dictionary of Color Combinations · Vol. 1">Añadir al carrito</button>
+</div>
+
+<div class="toast win" id="toast" role="status" aria-live="polite">
+ <div class="win-bar"><strong>Carrito</strong><span aria-hidden="true">_□×</span></div>
+ <div class="win-strip" aria-hidden="true"></div>
+ <div class="toast-body">
+  <p id="toast-msg"></p>
+  <span class="px" id="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <a href="#">Ver carrito</a>
+ </div>
+</div>
+<script>
+(function(){
+ var calm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+ /* gallery: thumbnails and counter follow the scroll position */
+ var slides=document.getElementById('slides'),shots=slides.children,pos=document.getElementById('pos'),
+     thumbs=document.querySelectorAll('.thumbs button'),raf;
+ function current(){
+  var mid=slides.scrollLeft+slides.clientWidth/2,best=0,d=Infinity;
+  for(var i=0;i<shots.length;i++){var c=shots[i].offsetLeft+shots[i].offsetWidth/2,x=Math.abs(c-mid);if(x<d){d=x;best=i}}
+  pos.textContent=(best+1)+' / '+shots.length;
+  thumbs.forEach(function(b,i){b.setAttribute('aria-current',i===best?'true':'false')});
+ }
+ slides.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(current)});
+ thumbs.forEach(function(b,i){
+  b.addEventListener('click',function(){var s=shots[i];slides.scrollTo({left:s.offsetLeft-(slides.clientWidth-s.offsetWidth)/2})});
+ });
+ /* add to cart: pixel progress, then ✓, cart bump and toast */
+ var n=0,busy=false,t,count=document.getElementById('count'),toast=document.getElementById('toast'),
+     msg=document.getElementById('toast-msg'),px=document.querySelectorAll('#px i'),mains=document.querySelectorAll('.js-main');
+ function label(text,done){mains.forEach(function(m){m.textContent=text;m.classList.toggle('done',done)})}
+ function add(b){
+  if(busy)return;busy=true;clearTimeout(t);
+  var name=b.dataset.name,main=b.classList.contains('js-main'),i=0;
+  px.forEach(function(p){p.classList.remove('on')});
+  msg.textContent='Añadiendo: '+name;toast.classList.add('show');
+  if(main)label('Añadiendo…',false);
+  function done(){
+   n++;count.textContent=n;count.classList.remove('bump');void count.offsetWidth;count.classList.add('bump');
+   setTimeout(function(){count.classList.remove('bump')},400);
+   msg.textContent='Añadido: '+name;
+   if(main)label('✓ Añadido al carrito',true);
+   else{b.textContent='✓';b.classList.add('done');b.setAttribute('aria-label',name+' añadido')}
+   busy=false;
+   t=setTimeout(function(){toast.classList.remove('show');label('Añadir al carrito',false)},2800);
+  }
+  function step(){px[i].classList.add('on');i++;if(i<px.length)setTimeout(step,55);else done()}
+  if(calm){px.forEach(function(p){p.classList.add('on')});done()}else step();
+ }
+ document.querySelectorAll('.js-main,.add').forEach(function(b){b.addEventListener('click',function(){add(b)})});
+ /* mobile bar hides while the main button is on screen */
+ if('IntersectionObserver' in window){
+  var bar=document.getElementById('sticky');
+  new IntersectionObserver(function(e){bar.classList.toggle('off',e[0].isIntersecting)}).observe(document.getElementById('main-add'));
+ }
+})();
+</script>
+</body>
+</html>

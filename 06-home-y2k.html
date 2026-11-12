@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Novus · 06 Home Y2K</title>
+<style>
+:root{--blue:#0047FF;--blue-2:#0033B8;--paper:#FFFFFF;--ink:#000000;--red:#FF1800;--ink-2:#4A4A4A;--line:#D9D9D9;--surface:#F4F3F0;--font:Helvetica,Arial,sans-serif;
+--display:Helvetica,Arial,sans-serif;
+--holo:var(--red);
+--chrome:linear-gradient(var(--ink),var(--ink));
+--c1:#C9473B;--c2:#E8B23A;--c3:#2F5D8A;--c4:#E9DCC3;--c5:#3C6E57;--c6:#D98BA0;--c7:#1F2A44;--c8:#F2E3B3;--c9:#B5562E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.5 var(--font);color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--paper);padding:12px;z-index:20}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* ticker */
+.ticker{background:var(--red);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:700;font-size:14px}
+.ticker div{display:inline-flex;gap:32px;padding:8px 0;animation:tick 28s linear infinite}
+.ticker span::after{content:"●";margin-left:32px;font-size:8px;vertical-align:middle}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--ink)}
+header::after{content:"";display:block;height:6px;background:var(--holo);border-top:1px solid var(--ink)}
+.bar{display:flex;align-items:center;gap:32px;min-height:64px}
+.logo{font-weight:700;font-size:22px;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+header nav ul{display:flex;gap:24px;list-style:none}
+header nav a{text-decoration:none;font-size:15px;display:inline-flex;min-height:44px;align-items:center;font-weight:700}
+header nav a:hover{color:var(--red)}
+.cart{min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}
+.cart b{background:var(--holo);color:var(--ink);border:2px solid var(--ink);border-radius:999px;min-width:32px;height:32px;padding:0 6px;display:inline-grid;place-items:center;font-size:13px;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.cart b.bump{transform:scale(1.35) rotate(-8deg);background:var(--red)}
+.menu-note{display:none;font-size:12px;color:var(--ink-2);max-width:120px;line-height:1.2}
+/* sparkles */
+.spark{position:absolute;line-height:1;pointer-events:none;user-select:none}
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center;padding:56px 0 64px}
+.hero h1{font-family:var(--display);font-weight:900;font-size:64px;line-height:.95;letter-spacing:-.03em;color:var(--ink)}
+.hero .lead{font-size:20px;margin:20px 0 28px;max-width:460px}
+.hero .s1{left:-30px;top:34px;font-size:40px;color:var(--red)}
+.hero .s2{right:8px;top:48px;font-size:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;font:700 14px var(--font);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--ink);background-color:var(--ink);color:var(--paper);text-decoration:none;cursor:pointer;transition:transform .15s,background-color .15s;
+ background-image:linear-gradient(180deg,rgba(255,255,255,.18) 0 50%,rgba(255,255,255,0) 50%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:hover{background-color:var(--red);color:var(--ink);border-color:var(--ink);transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.sec{background-color:var(--paper);background-image:none;box-shadow:none;color:var(--ink)}
+.btn.best{background-color:var(--blue);border-color:var(--blue);color:#fff}
+.btn.best:hover{background-color:var(--blue-2);border-color:var(--blue-2);color:#fff}
+.btn.sec:hover{background-color:var(--red)}
+.btn.sm{min-height:44px;padding:0 16px;white-space:nowrap}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.proof{margin-top:24px;font-size:14px;color:var(--ink-2)}
+.proof strong{color:var(--ink)}
+.fan{position:relative;height:560px}
+.fan a{position:absolute;width:300px;aspect-ratio:3/4;top:50%;left:50%;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),box-shadow .3s;text-decoration:none}
+.fan a:nth-child(1){transform:translate(-120%,-50%) rotate(-10deg)}
+.fan a:nth-child(2){transform:translate(-50%,-54%) rotate(0deg);z-index:2}
+.fan a:nth-child(3){transform:translate(20%,-50%) rotate(9deg)}
+.fan:hover a:nth-child(1),.fan:focus-within a:nth-child(1){transform:translate(-138%,-50%) rotate(-14deg)}
+.fan:hover a:nth-child(3),.fan:focus-within a:nth-child(3){transform:translate(38%,-50%) rotate(13deg)}
+.fan a:hover{z-index:3}
+.fan a:nth-child(2):hover{transform:translate(-50%,-58%) scale(1.04)}
+.fan a:nth-child(2) .cover{box-shadow:8px 8px 0 var(--ink)}
+/* cover component */
+.cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;padding:14px;overflow:hidden;border:1px solid var(--ink);color:var(--ink);background:var(--c4)}
+.cover .mast{font-weight:700;font-size:30px;letter-spacing:-.03em;line-height:.95}
+.cover .no{font-weight:700;font-size:56px;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.cover small{font-size:11px;background:var(--paper);color:var(--ink-2);align-self:flex-start;padding:2px 6px}
+.cover.dark{color:var(--paper)}
+.cover.dict{padding:0;display:grid;grid-template-rows:repeat(4,1fr)}
+.cover.dict div{display:grid;grid-template-columns:2fr 1fr 1fr}
+.cover.dict .mast{position:absolute;left:14px;top:14px;font-size:20px;background:var(--paper);padding:4px 8px;color:var(--ink);max-width:calc(100% - 28px)}
+.cover.dict small{position:absolute;left:14px;bottom:14px}
+/* stickers */
+.sticker{display:inline-block;font:700 13px/1 var(--display);color:var(--ink);padding:7px 12px;border:2px solid var(--ink);border-radius:999px;background:var(--holo);background-size:220% 100%;animation:shimmer 6s ease-in-out infinite alternate;transform:rotate(5deg);white-space:nowrap}
+.sticker.l{transform:rotate(-5deg)}
+@keyframes shimmer{to{background-position:100% 0}}
+.cover .sticker{position:absolute;top:12px;right:10px;z-index:2}
+.cover.dict .sticker{top:auto;bottom:12px}
+.item .cover.dict .sticker{right:auto;left:14px;bottom:44px}
+.badge{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;padding:4px 8px;z-index:2}
+.b-out{background:var(--paper);border:1px solid var(--ink-2);color:var(--ink-2)}
+/* section heads */
+.head{position:relative;display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 24px}
+.head h2{font-family:var(--display);font-weight:900;font-size:40px;letter-spacing:-.03em;line-height:1}
+.head a{font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+section.block,div.block{padding:56px 0}
+/* cabeceras */
+.mastheads{padding:8px 0 16px}
+.mastheads h2{font-size:20px;line-height:1.2;margin-bottom:20px}
+.mastheads ul{display:flex;flex-wrap:wrap;gap:16px 14px;list-style:none}
+.mastheads a{display:inline-flex;align-items:center;gap:12px;min-height:60px;padding:0 10px 0 24px;border:2px solid var(--ink);border-radius:999px;background:var(--paper);text-decoration:none;transition:transform .2s cubic-bezier(.3,1.6,.5,1),box-shadow .2s}
+.mastheads li:nth-child(odd) a{transform:rotate(-1.5deg)}
+.mastheads li:nth-child(even) a{transform:rotate(1.5deg)}
+.mastheads a strong{font:900 22px/1 var(--display);letter-spacing:-.02em}
+.mastheads a .sticker{transform:none;animation-play-state:paused}
+.mastheads a:hover,.mastheads a:focus-visible{transform:translateY(-4px) rotate(0deg);box-shadow:5px 5px 0 var(--ink);background:var(--holo)}
+.mastheads a:hover .sticker,.mastheads a:focus-visible .sticker{background:var(--paper)}
+/* chips */
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:24px;padding:4px 4px 6px}
+.chips button{flex:0 0 auto;min-height:44px;padding:0 18px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:700 14px var(--font);cursor:pointer;transition:transform .15s}
+.chips button:hover{transform:translateY(-2px)}
+.chips button[aria-pressed="true"]{background:var(--holo);box-shadow:3px 3px 0 var(--ink)}
+/* wall */
+.wall{display:grid;grid-template-columns:repeat(5,1fr);gap:24px 20px;list-style:none}
+.item{position:relative;display:grid;grid-template-rows:auto auto auto;align-content:start}
+.item>.cover,.item>.add{grid-area:1/1}
+.item .cover{transition:transform .25s cubic-bezier(.2,.9,.3,1.3),box-shadow .25s}
+.item:hover .cover,.item:focus-within .cover{transform:translateY(-6px) rotate(-1.2deg);box-shadow:8px 8px 0 var(--ink)}
+.item h3{font-size:15px;font-weight:400;margin-top:10px;line-height:1.3}
+.item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
+.item .p{font-weight:700;font-variant-numeric:tabular-nums}
+.item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
+.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background-color .15s}
+.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
+.add.done{background:var(--ink);color:var(--paper);transform:scale(1)}
+.item.out .cover{filter:grayscale(1);opacity:.7}
+.item.big{grid-column:span 2;grid-row:span 2}
+.item.big .cover .mast{font-size:48px}
+.item.big .cover.dict .mast{font-size:30px}
+/* big drop band */
+.drop{background:var(--ink);color:var(--paper);padding:56px 0;overflow:hidden}
+.drop .wrap{display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
+.drop h2{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;letter-spacing:-.03em}
+.drop h2 span{display:block;color:var(--red)}
+.drop p{margin:16px 0 24px;max-width:380px}
+.drop .btn{background-color:var(--red);color:var(--ink);border-color:var(--red)}
+.drop .btn:hover{background-color:var(--paper);border-color:var(--paper)}
+.drop :focus-visible{outline-color:var(--paper)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:220px;gap:16px;overflow-x:auto;list-style:none;scroll-snap-type:x mandatory;padding-bottom:12px}
+.rail li{scroll-snap-align:start}
+.rail .cover{border-color:var(--paper)}
+.rail h3{font-size:14px;font-weight:400;margin-top:8px}
+.rail .p{font-weight:700;font-variant-numeric:tabular-nums}
+/* window panel */
+.win{border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.win-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--ink);color:var(--paper);padding:6px 10px;font-size:13px;font-weight:700;line-height:1.3}
+.win-bar h2{font-size:13px}
+.win-bar span[aria-hidden]{letter-spacing:.35em;white-space:nowrap}
+/* newsletter */
+.news{position:relative;max-width:820px;margin:0 auto;box-shadow:8px 8px 0 var(--ink)}
+.news .win-body{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;align-items:center}
+.news .big{font:900 28px/1.1 var(--display);letter-spacing:-.02em}
+.news .big+p{margin-top:8px;font-size:14px;color:var(--ink-2)}
+.news label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.news .row{display:flex;gap:8px}
+.news input{flex:1 1 auto;min-width:0;min-height:56px;padding:0 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);color:var(--ink);font:16px var(--font)}
+.news input[aria-invalid="true"]{border-style:dashed}
+.news .msg{margin-top:8px;font-size:14px;font-weight:700;min-height:21px}
+.news .spark{right:-18px;top:-22px;font-size:36px;color:var(--red)}
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:64px}
+.trust div{padding:24px 24px 24px 0;font-size:14px;color:var(--ink-2)}
+.trust div+div{padding-left:24px;border-left:1px solid var(--line)}
+.trust strong{display:block;font-size:18px;color:var(--ink)}
+footer{padding:40px 0;display:flex;gap:24px;flex-wrap:wrap;font-size:14px}
+footer a{min-height:44px;display:inline-flex;align-items:center}
+footer strong{display:inline-flex;align-items:center}
+/* toast: window panel + pixel progress */
+.toast{position:fixed;left:50%;bottom:24px;width:360px;max-width:calc(100% - 32px);transform:translate(-50%,160%);visibility:hidden;box-shadow:8px 8px 0 var(--ink);z-index:30;transition:transform .35s cubic-bezier(.2,.9,.3,1.3),visibility 0s .35s}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition-delay:0s}
+.toast .win-body{padding:12px;display:grid;grid-template-columns:1fr auto;gap:10px 12px;align-items:center}
+.toast .name{font-weight:700;line-height:1.25}
+.toast .btn{grid-row:span 2}
+.px{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;height:14px;padding:2px;border:2px solid var(--ink)}
+.px i{background:var(--surface)}
+.px i.on{background:var(--red)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+ @media (min-width:901px){
+  .hero h1 span{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0}
+ }
+}
+@media (max-width:900px){
+ .wrap{padding:0 16px}
+ header nav{display:none}
+ .menu-note{display:block}
+ .bar{gap:12px;min-height:56px}
+ .hero{grid-template-columns:1fr;padding:24px 0 32px;gap:8px}
+ .hero h1{font-size:40px}
+ .hero .lead{font-size:17px;margin:12px 0 20px}
+ .hero .s1{left:0;top:296px;font-size:28px}
+ .hero .s2{top:16px;right:0;font-size:22px}
+ .fan{height:320px;order:-1}
+ .fan a{width:170px}
+ .fan a:nth-child(2) .cover{box-shadow:5px 5px 0 var(--ink)}
+ .ctas .btn{flex:1 1 100%}
+ .cover .mast{font-size:22px}.cover .no{font-size:40px}
+ .cover.dict .mast{font-size:15px}
+ .sticker{font-size:12px;padding:6px 9px}
+ .head h2{font-size:28px}
+ section.block,div.block{padding:40px 0}
+ .mastheads ul{gap:12px 8px}
+ .mastheads a{min-height:52px;padding:0 8px 0 16px;gap:8px}
+ .mastheads a strong{font-size:17px}
+ .wall{grid-template-columns:1fr 1fr;gap:20px 12px}
+ .item.big{grid-column:span 2;grid-row:auto}
+ .item.big .cover.dict .mast{font-size:22px}
+ .add{width:44px;height:44px}
+ .drop .wrap{grid-template-columns:1fr;gap:24px}
+ .drop h2{font-size:32px}
+ .rail{grid-auto-columns:46%}
+ .news{box-shadow:5px 5px 0 var(--ink)}
+ .news .win-body{grid-template-columns:1fr;padding:20px 16px}
+ .news .big{font-size:24px}
+ .news .row{flex-direction:column}
+ .news .spark{right:-6px;font-size:28px}
+ .trust{grid-template-columns:1fr;margin-top:48px}
+ .trust div,.trust div+div{padding:16px 0;border-left:0}
+ .trust div+div{border-top:1px solid var(--line)}
+ .toast{bottom:16px;box-shadow:5px 5px 0 var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition:none!important;animation:none!important}
+ .ticker div{flex-wrap:wrap;white-space:normal}
+}
+.wrap.wrap{padding-inline:48px}
+.logo{white-space:nowrap}
+@media (max-width:900px){.wrap.wrap{padding-inline:16px}}
+/* real product photos (local files under img/) */
+.cover.has-photo{background:var(--paper)}
+.cover .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cover .photo.mock{inset:auto;height:auto;max-width:none}
+.cover .photo.fit{object-fit:contain}
+@media (max-width:900px){html,body{overflow-x:clip}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="ticker" aria-label="Novedades">
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span></div>
+</div>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
+  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+ </div>
+</header>
+
+<main id="main">
+ <section class="wrap hero" aria-labelledby="h1">
+  <div>
+   <h1 id="h1"><span>Diseño japonés que se compra por la portada</span></h1>
+   <p class="lead">Revistas y libros de diseño en edición original, traídos de Japón y enviados desde España.</p>
+   <div class="ctas"><a class="btn" href="#muro">Ver las portadas</a><a class="btn best" href="#">Best Seller · 25,65 €</a></div>
+   <p class="proof"><strong>5,0</strong> de media en 238 valoraciones reales en Vinted y Etsy</p>
+  </div>
+  <div class="fan" role="group" aria-label="Destacados">
+   <a href="#" aria-label="POPEYE Hello, Tokyo!, en oferta, 33,25 €"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span></a>
+   <a href="#" aria-label="A Dictionary of Color Combinations vol. 1, Best Seller, 25,65 €"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span></a>
+   <a href="#" aria-label="BRUTUS Nº1050, en oferta, 28,03 €"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span></a>
+  </div>
+  <span class="spark s1" aria-hidden="true">✦</span><span class="spark s2" aria-hidden="true">✧</span>
+ </section>
+
+ <nav class="wrap mastheads" aria-labelledby="h-cab">
+  <h2 id="h-cab">Revistas por cabecera</h2>
+  <ul>
+   <li><a href="#"><strong>POPEYE</strong><span class="sticker">6 números</span></a></li>
+   <li><a href="#"><strong>BRUTUS</strong><span class="sticker">3 números</span></a></li>
+   <li><a href="#"><strong>GO OUT</strong><span class="sticker">2 números</span></a></li>
+   <li><a href="#"><strong>FUDGE</strong><span class="sticker">6 números</span></a></li>
+   <li><a href="#"><strong>Especiales</strong><span class="sticker">4 números</span></a></li>
+  </ul>
+ </nav>
+
+ <section class="wrap block" id="muro" aria-labelledby="h-muro">
+  <div class="head"><h2 id="h-muro">Todas las portadas</h2><a href="#">Ver las 42</a></div>
+  <div class="chips" role="group" aria-label="Filtrar">
+   <button type="button" aria-pressed="true">Todo</button><button type="button" aria-pressed="false">Revistas</button><button type="button" aria-pressed="false">Libros de diseño</button><button type="button" aria-pressed="false">Studio Ghibli</button><button type="button" aria-pressed="false">Ofertas</button>
+  </div>
+  <ul class="wall">
+   <li class="item big"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span>
+    <h3><a href="#">A Dictionary of Color Combinations · Vol. 1</a></h3><span class="p">25,65 €</span>
+    <button class="add" type="button" data-name="Dictionary vol. 1" aria-label="Añadir Dictionary vol. 1 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png" alt="Portada de POPEYE Nº950" loading="lazy" width="900" height="584" style="width:354.1%;left:-120.2%;top:-35.9%"><span class="sticker l">Nuevo <span aria-hidden="true">✦</span></span></span><h3><a href="#">POPEYE Nº950</a></h3><span class="p">34,20 €</span><button class="add" type="button" data-name="POPEYE Nº950" aria-label="Añadir POPEYE Nº950 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span><h3><a href="#">BRUTUS Nº1050</a></h3><span class="p">28,03 €<s>33,20 €</s></span><button class="add" type="button" data-name="BRUTUS Nº1050" aria-label="Añadir BRUTUS Nº1050 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s>49,40 €</s></span><button class="add" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png" alt="Portada de GO OUT 201" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3><a href="#">GO OUT 201</a></h3><span class="p">32,30 €</span><button class="add" type="button" data-name="GO OUT 201" aria-label="Añadir GO OUT 201 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add" type="button" data-name="Traditional Japanese Patterns vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo" src="img/fudge-febrero-2026-vol-271-color-balance-1.jpg" alt="Portada de FUDGE 271" loading="lazy" width="900" height="1152"></span><h3><a href="#">FUDGE 271</a></h3><span class="p">28,03 €</span><button class="add" type="button" data-name="FUDGE 271" aria-label="Añadir FUDGE 271 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span><h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span><button class="add" type="button" data-name="Dictionary vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s>34,20 €</s></span><button class="add" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito">+</button></li>
+   <li class="item out"><span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"><span class="badge b-out">Agotado</span></span><h3><a href="#">Old-Style Alphabet Lettering of Japan</a></h3><span class="p">Avísame cuando vuelva</span></li>
+  </ul>
+ </section>
+
+ <section class="drop" aria-labelledby="h-gh">
+  <div class="wrap">
+   <div>
+    <h2 id="h-gh">Studio Ghibli <span>en edición japonesa</span></h2>
+    <p>Libros ilustrados de Totoro, Chihiro, Mononoke y Howl, tal como se venden en Japón.</p>
+    <a class="btn" href="#">Ver los 7 libros</a>
+   </div>
+   <ul class="rail">
+    <li><span class="cover has-photo"><img class="photo mock" src="img/-mi-vecino-totoro-ehon-tokuma-n--4-edicion-japonesa-1.png" alt="Portada de Mi vecino Totoro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3>Mi vecino Totoro</h3><span class="p">29,93 €</span></li>
+    <li><span class="cover has-photo"><img class="photo mock" src="img/-el-viaje-de-chihiro-ehon-tokuma-n--24-japones-1.png" alt="Portada de El viaje de Chihiro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El viaje de Chihiro</h3><span class="p">29,93 €</span></li>
+    <li><span class="cover has-photo"><img class="photo mock" src="img/-el-castillo-ambulante-de-howl-ehon-tokuma-n--28-jap-1.png" alt="Portada de El castillo ambulante" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El castillo ambulante</h3><span class="p">29,93 €</span></li>
+    <li><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-1-ehon-tokuma-n--16-japo-1.png" alt="Portada de La princesa Mononoke · Parte 1" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>La princesa Mononoke · Parte 1</h3><span class="p">29,93 €</span></li>
+    <li><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-2-ehon-tokuma-n--17-japo-1.png" alt="Portada de La princesa Mononoke · Parte 2" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.4%;top:-26.4%"></span><h3>La princesa Mononoke · Parte 2</h3><span class="p">29,93 €</span></li>
+   </ul>
+  </div>
+ </section>
+
+ <div class="wrap block">
+  <section class="win news" aria-labelledby="h-news">
+   <div class="win-bar"><h2 id="h-news">Novedades cada semana</h2><span aria-hidden="true">_ □ ×</span></div>
+   <div class="win-body">
+    <div>
+     <p class="big">Las portadas nuevas de Japón, en tu correo.</p>
+     <p>Solo te escribimos cuando llegan números y libros nuevos.</p>
+    </div>
+    <form id="news-form" novalidate>
+     <label for="email">Tu correo electrónico</label>
+     <div class="row"><input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.es" aria-describedby="news-msg" required><button class="btn" type="submit">Apuntarme</button></div>
+     <p class="msg" id="news-msg" role="status"></p>
+    </form>
+   </div>
+   <span class="spark" aria-hidden="true">✦</span>
+  </section>
+
+  <div class="trust">
+   <div><strong>Enviado desde España</strong>Con esquineras y funda protectora. Coste y plazo: [por confirmar]</div>
+   <div><strong>5,0 de media</strong>238 valoraciones reales en Vinted y Etsy</div>
+   <div><strong>Devolución en 14 días</strong>Desde que recibes el pedido</div>
+  </div>
+ </div>
+</main>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+
+<div class="win toast" id="toast">
+ <div class="win-bar"><span id="toast-title">Añadiendo al carrito</span><span aria-hidden="true">_ □ ×</span></div>
+ <div class="win-body">
+  <span class="name" id="toast-name" aria-hidden="true"></span>
+  <a class="btn sm" href="#">Ver carrito</a>
+  <div class="px" id="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+ <p class="sr" id="toast-msg" role="status" aria-live="polite"></p>
+</div>
+<script>
+(function(){
+ var n=0,count=document.getElementById('count'),toast=document.getElementById('toast'),msg=document.getElementById('toast-msg'),
+  title=document.getElementById('toast-title'),name=document.getElementById('toast-name'),
+  blocks=document.querySelectorAll('#px i'),still=window.matchMedia('(prefers-reduced-motion:reduce)').matches,t,step,pending;
+ function added(b){
+  pending=null;n++;count.textContent=n;count.classList.remove('bump');void count.offsetWidth;count.classList.add('bump');
+  setTimeout(function(){count.classList.remove('bump')},300);
+  b.textContent='✓';b.classList.add('done');b.setAttribute('aria-label',b.dataset.name+' añadido');
+  title.textContent='Añadido al carrito';msg.textContent='Añadido: '+b.dataset.name;
+  t=setTimeout(function(){toast.classList.remove('show')},2600);
+ }
+ document.querySelectorAll('.add').forEach(function(b){
+  b.addEventListener('click',function(){
+   var i=0;
+   clearTimeout(t);clearInterval(step);
+   if(pending){added(pending);clearTimeout(t)}
+   pending=b;
+   blocks.forEach(function(x){x.classList.remove('on')});
+   title.textContent='Añadiendo al carrito';name.textContent=b.dataset.name;msg.textContent='';
+   toast.classList.add('show');
+   if(still){blocks.forEach(function(x){x.classList.add('on')});added(b);return}
+   step=setInterval(function(){
+    blocks[i].classList.add('on');i++;
+    if(i===blocks.length){clearInterval(step);added(b)}
+   },55);
+  });
+ });
+ document.querySelectorAll('.chips button').forEach(function(c,i,all){
+  c.addEventListener('click',function(){all.forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true')});
+ });
+ var form=document.getElementById('news-form'),email=document.getElementById('email'),nmsg=document.getElementById('news-msg');
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!email.value||!email.checkValidity()){
+   email.setAttribute('aria-invalid','true');nmsg.textContent='Escribe un correo válido, por ejemplo nombre@correo.es';email.focus();return;
+  }
+  email.removeAttribute('aria-invalid');nmsg.textContent='Apuntado. Te avisaremos de las novedades.';form.querySelector('button').textContent='Apuntado ✓';
+ });
+})();
+</script>
+</body>
+</html>

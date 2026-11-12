@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="es">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Novus · 08 Colección Revistas japonesas</title>
+<style>
+:root{--paper:#FFFFFF;--ink:#000000;--red:#FF1800;--ink-2:#4A4A4A;--line:#D9D9D9;--surface:#F4F3F0;--font:Helvetica,Arial,sans-serif;
+--display:Helvetica,Arial,sans-serif;
+--holo:var(--red);
+--chrome:linear-gradient(var(--ink),var(--ink));
+--c1:#C9473B;--c2:#E8B23A;--c3:#2F5D8A;--c4:#E9DCC3;--c5:#3C6E57;--c6:#D98BA0;--c7:#1F2A44;--c8:#F2E3B3;--c9:#B5562E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.5 var(--font);color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--paper);padding:12px;z-index:20}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* ticker (05) */
+.ticker{background:var(--red);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:700;font-size:14px}
+.ticker div{display:inline-flex;gap:32px;padding:8px 0;animation:tick 28s linear infinite}
+.ticker span::after{content:"/";margin-left:32px}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* header (05) */
+header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--ink)}
+.bar{display:flex;align-items:center;gap:32px;min-height:64px}
+.logo{font-weight:700;font-size:22px;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{text-decoration:none;font-size:15px;display:inline-flex;min-height:44px;align-items:center;font-weight:700}
+nav a:hover{color:var(--red)}
+nav a[aria-current="page"]{box-shadow:inset 0 -4px 0 var(--red)}
+.cart{min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}
+.cart b{background:var(--holo);color:var(--ink);border:2px solid var(--ink);min-width:30px;height:30px;display:inline-grid;place-items:center;font-size:13px;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.cart b.bump{transform:scale(1.35);background:var(--red)}
+.menu-note{display:none;font-size:12px;color:var(--ink-2);max-width:120px;line-height:1.2}
+/* buttons (05 + glossy) */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;font:700 14px var(--font);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:var(--red);color:var(--ink);border-color:var(--red);transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.sec{background:var(--paper);color:var(--ink)}
+.btn.sec:hover{border-color:var(--ink)}
+.btn.gloss{background-image:linear-gradient(180deg,rgba(255,255,255,.18) 0 50%,rgba(255,255,255,0) 50%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.btn.small{min-height:48px;padding:0 20px}
+/* collection head */
+.crumbs{font-size:14px;color:var(--ink-2);padding-top:24px}
+.crumbs ol{display:flex;gap:8px;list-style:none}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{display:inline-block;padding:10px 0}
+.chead{padding:8px 0 32px}
+.chead h1{font:900 96px/.95 var(--display);letter-spacing:-.03em;color:var(--ink);position:relative;display:inline-block}
+.chead h1 span{display:inline-block}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+ .chead h1 span{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0}
+}
+.chead h1 i{position:absolute;right:-44px;top:-6px;font:400 40px var(--font);color:var(--ink)}
+.chead p{font-size:20px;max-width:620px;margin-top:16px}
+/* masthead stickers (strip idea from 03) */
+.masts{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:8px 0 40px;border-bottom:1px solid var(--ink)}
+.sticker{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border:2px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);font:900 14px var(--display);cursor:pointer;transition:transform .2s cubic-bezier(.3,1.6,.5,1),box-shadow .2s}
+.sticker em{font:700 12px var(--font);font-style:normal;font-variant-numeric:tabular-nums}
+.sticker:nth-child(odd){transform:rotate(-3deg)}
+.sticker:nth-child(even){transform:rotate(2.5deg)}
+.sticker:nth-child(3n){transform:rotate(-5deg)}
+.sticker:hover{transform:rotate(0) translateY(-3px)}
+.sticker[aria-pressed="true"]{background:var(--holo);background-size:200% 100%;box-shadow:4px 4px 0 var(--ink);animation:shimmer 6s linear infinite alternate}
+.sticker[aria-pressed="true"]::before{content:"✓"}
+@keyframes shimmer{to{background-position:100% 0}}
+/* layout */
+.shop{display:grid;grid-template-columns:280px 1fr;gap:48px;padding:40px 0 64px;align-items:start}
+/* window panel */
+.win{border:2px solid var(--ink);background:var(--paper)}
+.win-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);color:var(--paper);font-weight:700;font-size:13px;padding:0 4px 0 12px;min-height:36px}
+.win-bar .deco{letter-spacing:.3em;padding-right:8px}
+.win-x{display:none;width:44px;height:44px;background:var(--ink);color:var(--paper);border:0;font:700 20px var(--font);cursor:pointer}
+.win-x:focus-visible{outline-offset:-5px}
+.filters{position:sticky;top:88px}
+.filters fieldset{border:0;padding:16px;border-bottom:1px solid var(--line)}
+.filters legend{float:left;width:100%;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.filters label{clear:both;display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer}
+.filters label span{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.filters input{width:20px;height:20px;accent-color:var(--ink);flex:0 0 auto}
+.filters-foot{padding:16px;display:grid;gap:8px}
+.filters-foot .apply{display:none}
+.backdrop{display:none}
+/* toolbar */
+.tools{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.count{font-weight:700;font-size:20px;margin-right:auto;font-variant-numeric:tabular-nums}
+.open-filters{display:none}
+.sort{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+.sort select{min-height:48px;padding:0 12px;border:2px solid var(--ink);border-radius:0;background:var(--paper);color:var(--ink);font:16px var(--font)}
+.active{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:24px;min-height:0}
+.active:empty{margin:0}
+.active button{min-height:44px;padding:0 14px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:700 14px var(--font);cursor:pointer}
+.active button:hover{background:var(--ink);color:var(--paper)}
+.active button.clear{border:0;text-decoration:underline;padding:0 8px}
+.active button.clear:hover{background:var(--paper);color:var(--ink)}
+/* cover component (05) */
+.cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;padding:14px;overflow:hidden;border:1px solid var(--ink);color:var(--ink);background:var(--c4)}
+.cover .mast{font-weight:700;font-size:30px;letter-spacing:-.03em;line-height:.95}
+.cover .no{font-weight:700;font-size:56px;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.cover .no.txt{font-size:28px;letter-spacing:-.02em}
+.cover small{font-size:11px;background:var(--paper);color:var(--ink-2);align-self:flex-start;padding:2px 6px}
+.cover.dark{color:var(--paper)}
+.badge{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;padding:4px 10px;z-index:2}
+.b-holo{background:var(--holo);background-size:200% 100%;color:var(--ink);border:2px solid var(--ink);border-radius:999px;font-family:var(--display);font-weight:900;transform:rotate(5deg);animation:shimmer 6s linear infinite alternate}
+.b-out{background:var(--paper);border:1px solid var(--ink-2);color:var(--ink-2)}
+/* wall (05) */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;list-style:none}
+.item{position:relative;display:grid;grid-template-rows:auto auto auto;align-content:start}
+.item>.cover,.item>.add{grid-area:1/1}
+.item .cover{transition:transform .25s cubic-bezier(.2,.9,.3,1.3),box-shadow .25s}
+.item:hover .cover,.item:focus-within .cover{transform:translateY(-6px) rotate(-1.2deg);box-shadow:8px 8px 0 var(--ink)}
+.item h3{font-size:15px;font-weight:400;margin-top:10px;line-height:1.3}
+.item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
+.item .p{font-weight:700;font-variant-numeric:tabular-nums}
+.item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
+.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .15s}
+.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
+.add.done{background:var(--ink);color:var(--paper);transform:scale(1)}
+.item.out .cover{filter:grayscale(1);opacity:.7}
+.item.out h3,.item.out .p{color:var(--ink-2)}
+.item.out .p{font-weight:400}
+.notify{position:relative;z-index:3;font-weight:700;font-size:14px;min-height:44px;display:inline-flex;align-items:center;justify-self:start}
+/* load more + pixel progress */
+.more{display:grid;justify-items:center;gap:12px;margin-top:48px}
+.more p{font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pixels{display:flex;gap:3px}
+.pixels i{width:18px;height:12px;border:1px solid var(--ink);background:var(--paper)}
+.pixels i.on{background:var(--ink)}
+/* empty state */
+.empty{max-width:560px;margin:8px 0 0}
+.empty .body{padding:32px 24px}
+.empty h2{font-size:28px;line-height:1.1;letter-spacing:-.02em}
+.empty p{margin:12px 0 24px;color:var(--ink-2)}
+[hidden]{display:none!important}
+/* artboard note */
+.note{border-top:1px dashed var(--ink-2);padding:16px 0;font-size:14px;color:var(--ink-2);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.note button{min-height:44px;padding:0 14px;border:1px dashed var(--ink-2);background:var(--paper);color:var(--ink);font:700 14px var(--font);cursor:pointer}
+footer{padding:40px 0;display:flex;gap:24px;flex-wrap:wrap;font-size:14px;border-top:1px solid var(--ink)}
+footer a{min-height:44px;display:inline-flex;align-items:center}
+/* toast as window panel */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,160%);z-index:30;transition:transform .35s cubic-bezier(.2,.9,.3,1.3);width:max-content;max-width:calc(100% - 32px);box-shadow:8px 8px 0 var(--ink)}
+.toast.show{transform:translate(-50%,0)}
+.toast .body{display:flex;gap:16px;align-items:center;padding:12px 12px 12px 16px;font-weight:700}
+.toast a{color:var(--ink);background:var(--red);padding:8px 12px;text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:900px){
+ .wrap{padding:0 16px}
+ nav{display:none}
+ .menu-note{display:block}
+ .bar{gap:12px;min-height:56px}
+ .crumbs{padding-top:12px}
+ .chead{padding:4px 0 20px}
+ .chead h1{font-size:56px;display:block}
+ .chead h1 span{display:block}
+ .chead h1 i{right:0;top:-2px;font-size:28px}
+ .chead p{font-size:17px;margin-top:12px}
+ .masts{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:10px;margin:0 -16px;padding:8px 16px 28px}
+ .sticker{flex:0 0 auto}
+ .shop{grid-template-columns:1fr;gap:0;padding:24px 0 48px}
+ .tools{gap:8px 12px}
+ .open-filters{display:inline-flex;flex:1 1 0;gap:8px}
+ .open-filters b{background:var(--holo);color:var(--ink);border:2px solid var(--paper);min-width:24px;height:24px;display:inline-grid;place-items:center;font-size:12px}
+ .sort{flex:1 1 0}
+ .sort span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .sort select{width:100%}
+ .count{order:3;flex:1 1 100%;font-size:16px}
+ .wall{grid-template-columns:1fr 1fr;gap:20px 12px}
+ .cover .mast{font-size:22px}.cover .no{font-size:40px}.cover .no.txt{font-size:20px}
+ .add{width:44px;height:44px}
+ .more{margin-top:32px}
+ .more .btn{width:100%}
+ /* filters become a bottom sheet */
+ .filters{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:40;max-height:85vh;overflow-y:auto;border-width:2px 0 0;transform:translateY(100%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.9,.3,1),visibility 0s .3s}
+ .filters.open{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.9,.3,1)}
+ .filters .win-bar{position:sticky;top:0;min-height:44px;padding-right:0}
+ .filters .deco{display:none}
+ .win-x{display:block}
+ .filters-foot{grid-template-columns:1fr 1fr;position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--ink)}
+ .filters-foot .apply{display:inline-flex}
+ .filters-foot .btn{padding:0 8px}
+ .filters fieldset:last-of-type{border-bottom:0}
+ .backdrop{position:fixed;inset:0;z-index:39;background:rgba(0,0,0,.5)}
+ .backdrop.open{display:block}
+ .empty h2{font-size:24px}
+ .empty .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition:none!important;animation:none!important}
+ .ticker div{flex-wrap:wrap;white-space:normal}
+}
+.wrap.wrap{padding-inline:48px}
+.logo{white-space:nowrap}
+@media (max-width:900px){.wrap.wrap{padding-inline:16px}}
+/* real product photos (local files under img/) */
+.cover.has-photo{background:var(--paper)}
+.cover .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cover .photo.mock{inset:auto;height:auto;max-width:none}
+.cover .photo.fit{object-fit:contain}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="ticker" aria-label="Novedades">
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span></div>
+</div>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="#" aria-current="page">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
+  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+ </div>
+</header>
+
+<main id="main">
+ <div class="wrap">
+  <nav class="crumbs" aria-label="Migas de pan"><ol><li><a href="#">Inicio</a></li><li aria-current="page">Revistas japonesas</li></ol></nav>
+  <div class="chead">
+   <h1><span>Revistas</span> <span>japonesas</span><i aria-hidden="true">✦</i></h1>
+   <p>Números originales de POPEYE, BRUTUS, GO OUT y FUDGE, traídos de Japón y enviados desde España. Elige por la portada.</p>
+  </div>
+  <div class="masts" id="masts" role="group" aria-label="Filtrar por cabecera"></div>
+
+  <div class="shop">
+   <div class="backdrop" id="backdrop"></div>
+   <aside class="win filters" id="filters" aria-labelledby="f-title">
+    <div class="win-bar"><span id="f-title">Filtros</span><span class="deco" aria-hidden="true">_ □ ×</span><button class="win-x" type="button" id="f-close" aria-label="Cerrar filtros">×</button></div>
+    <form id="f-form" onsubmit="return false">
+     <fieldset><legend>Disponibilidad</legend>
+      <label><input type="checkbox" id="f-stock">En stock<span id="n-stock"></span></label>
+      <label><input type="checkbox" id="f-out">Agotado<span id="n-out"></span></label>
+     </fieldset>
+     <fieldset><legend>Precio</legend>
+      <label><input type="radio" name="price" value="all" checked>Todos los precios</label>
+      <label><input type="radio" name="price" value="lo">Menos de 30 €<span id="n-lo"></span></label>
+      <label><input type="radio" name="price" value="hi">30 € o más<span id="n-hi"></span></label>
+     </fieldset>
+     <fieldset><legend>Ofertas</legend>
+      <label><input type="checkbox" id="f-offer">Solo rebajadas<span id="n-offer"></span></label>
+     </fieldset>
+     <div class="filters-foot">
+      <button class="btn sec small" type="button" id="f-clear">Quitar filtros</button>
+      <button class="btn gloss small apply" type="button" id="f-apply">Ver revistas</button>
+     </div>
+    </form>
+   </aside>
+
+   <section aria-labelledby="h-res">
+    <h2 class="sr" id="h-res" tabindex="-1">Resultados</h2>
+    <div class="tools">
+     <p class="count" id="res-count" role="status" aria-live="polite"></p>
+     <button class="btn small open-filters" type="button" id="f-open" aria-haspopup="dialog" aria-controls="filters">Filtrar <b id="f-n" hidden></b></button>
+     <label class="sort"><span>Ordenar por</span>
+      <select id="sort" aria-label="Ordenar por">
+       <option value="dest">Destacados</option>
+       <option value="nov">Novedades</option>
+       <option value="asc">Precio: menor a mayor</option>
+       <option value="desc">Precio: mayor a menor</option>
+      </select>
+     </label>
+    </div>
+    <div class="active" id="active" aria-label="Filtros activos"></div>
+
+    <ul class="wall" id="wall"></ul>
+
+    <div class="win empty" id="empty" hidden>
+     <div class="win-bar"><span>Sin resultados</span><span class="deco" aria-hidden="true">_ □ ×</span></div>
+     <div class="body">
+      <h2 id="empty-title">No hay revistas de esa cabecera en stock</h2>
+      <p id="empty-text"></p>
+      <button class="btn gloss" type="button" id="empty-clear">Quitar filtros</button>
+     </div>
+    </div>
+
+    <div class="more" id="more">
+     <div class="pixels" id="pixels" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+     <p id="more-text"></p>
+     <button class="btn gloss" type="button" id="more-btn"></button>
+    </div>
+   </section>
+  </div>
+
+  <p class="note">Nota de artboard: la cabecera «Especiales» con «En stock» enseña el estado sin resultados.
+   <button type="button" id="demo-empty">Probar sin resultados</button></p>
+ </div>
+</main>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+
+<div class="win toast" id="toast" role="status" aria-live="polite">
+ <div class="win-bar"><span>Carrito</span><span class="deco" aria-hidden="true">_ □ ×</span></div>
+ <div class="body"><span id="toast-msg"></span><a href="#">Ver carrito</a></div>
+</div>
+<script>
+(function(){
+ // ph = real cover photo [file, width, height, class, position].
+ // Order of the array = "Destacados". nov = demo order for "Novedades" (real order: Shopify publish date).
+ var MAGS=[
+  {t:'POPEYE Nº950',ph:['popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png',900,584,'mock','width:354.1%;left:-120.2%;top:-35.9%'],g:'POPEYE',m:'POPEYE',n:'950',p:34.20,c:6,nov:1},
+  {t:'BRUTUS Nº1050',ph:['brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png',900,584,'mock','width:322.8%;left:-110.9%;top:-28.1%'],g:'BRUTUS',m:'BRUTUS',n:'1050',p:28.03,was:33.20,c:7,nov:3},
+  {t:'POPEYE Hello, Tokyo!',ph:['popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png',900,584,'mock','width:313.9%;left:-106.3%;top:-26.4%'],g:'POPEYE',m:'POPEYE',n:'Hello, Tokyo!',txt:1,p:33.25,was:49.40,c:2,nov:15},
+  {t:'GO OUT 201',ph:['go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png',900,584,'mock','width:315.5%;left:-107.4%;top:-26.5%'],g:'GO OUT',m:'GO OUT',n:'201',p:32.30,c:5,nov:4},
+  {t:'FUDGE 271',ph:['fudge-febrero-2026-vol-271-color-balance-1.jpg',900,1152,'',''],g:'FUDGE',m:'FUDGE',n:'271',p:28.03,c:1,nov:5},
+  {t:'men\'s FUDGE 184',ph:['mens-fudge-agosto-2026-vol-184-the-world-snap-1.png',900,584,'mock','width:334.6%;left:-110.8%;top:-31.1%'],g:'FUDGE',m:'men\'s FUDGE',n:'184',p:28.03,c:8,nov:6},
+  {t:'BRUTUS Nº1028',ph:['brutus-abril-2025-n1028-el-gran-atlas-de-tokio-1.png',900,584,'mock','width:322.8%;left:-110.9%;top:-28.9%'],g:'BRUTUS',m:'BRUTUS',n:'1028',p:34.20,c:9,nov:9},
+  {t:'POPEYE 949',ph:['popeye-mayo-2026-issue-949-cars-especial-50-aniversario-1.png',900,584,'mock','width:313.9%;left:-106.6%;top:-26.4%'],g:'POPEYE',m:'POPEYE',n:'949',p:28.50,c:4,nov:2},
+  {t:'men\'s FUDGE 182',ph:['mens-fudge-junio-2026-vol-182-the-denim-snap-in-europe-1.jpg',900,1152,'',''],g:'FUDGE',m:'men\'s FUDGE',n:'182',p:26.60,was:32.30,c:3,nov:8},
+  {t:'POPEYE Nº934',ph:['popeye-febrero-2025-n934-style-sample-25-1.png',900,584,'mock','width:316.4%;left:-107.5%;top:-26.9%'],g:'POPEYE',m:'POPEYE',n:'934',p:34.20,c:8,nov:14},
+  {t:'FUDGE 266',ph:['fudge-septiembre-2025-vol-266-street-snap-1.jpg',900,1152,'',''],g:'FUDGE',m:'FUDGE',n:'266',p:28.03,c:6,nov:11},
+  {t:'BRUTUS Nº1025',ph:['brutus-marzo-2025-n1025-que-es-un-trabajo-con-buen-gusto-1.png',900,584,'mock','width:323.9%;left:-111.2%;top:-28.4%'],g:'BRUTUS',m:'BRUTUS',n:'1025',p:30.40,c:2,nov:10},
+  {t:'men\'s FUDGE 183',ph:['mens-fudge-julio-2026-vol-183-converse-or-vans-1.png',900,584,'mock','width:356.8%;left:-125.2%;top:-36.5%'],g:'FUDGE',m:'men\'s FUDGE',n:'183',p:28.50,c:5,nov:7},
+  {t:'POPEYE 935',ph:['popeye-marzo-2025-issue-935-my-room-my-rules-1.png',900,584,'mock','width:316.4%;left:-107.5%;top:-26.9%'],g:'POPEYE',m:'POPEYE',n:'935',p:28.50,c:1,nov:13},
+  {t:'men\'s FUDGE 170',ph:['mens-fudge-abril-2025-vol-170-about-spring-1.png',900,584,'mock','width:350.0%;left:-118.4%;top:-34.9%'],g:'FUDGE',m:'men\'s FUDGE',n:'170',p:26.60,c:4,nov:12},
+  {t:'POPEYE Especial Viaje en Solitario',ph:['popeye-especial-nuestro-viaje-en-solitario-por-japon-mook-1.png',900,584,'mock','width:316.4%;left:-107.5%;top:-26.9%'],g:'POPEYE',sp:1,m:'POPEYE',n:'Especial Viaje en Solitario',txt:1,p:36.10,out:1,c:9,nov:16},
+  {t:'GO OUT 200',ph:['go-out-junio-2026-vol-200-edicion-aniversario-1.png',900,584,'mock','width:326.2%;left:-112.8%;top:-29.1%'],g:'GO OUT',m:'GO OUT',n:'200',p:32.30,out:1,c:3,nov:17}
+ ];
+ var MASTS=['POPEYE','BRUTUS','GO OUT','FUDGE','Especiales'],DARK={1:1,3:1,5:1,7:1,9:1},PAGE=12;
+ var st={mast:'all',stock:false,out:false,price:'all',offer:false,sort:'dest',limit:PAGE},added={};
+ function $(id){return document.getElementById(id)}
+ function eur(x){return x.toFixed(2).replace('.',',')+' €'}
+ function plural(n){return n+(n===1?' revista':' revistas')}
+ function inMast(m,k){return k==='all'||(k==='Especiales'?!!m.sp:m.g===k)}
+ function match(m){
+  if(!inMast(m,st.mast))return false;
+  if(st.stock!==st.out&&(st.stock?m.out:!m.out))return false;
+  if(st.price==='lo'&&m.p>=30)return false;
+  if(st.price==='hi'&&m.p<30)return false;
+  if(st.offer&&!m.was)return false;
+  return true;
+ }
+ function sorted(list){
+  var l=list.slice();
+  if(st.sort==='asc')l.sort(function(a,b){return a.p-b.p});
+  if(st.sort==='desc')l.sort(function(a,b){return b.p-a.p});
+  if(st.sort==='nov')l.sort(function(a,b){return a.nov-b.nov});
+  // sold-out items always go last
+  return l.filter(function(m){return !m.out}).concat(l.filter(function(m){return m.out}));
+ }
+ function photo(m){
+  var p=m.ph;
+  return '<img class="photo'+(p[3]?' '+p[3]:'')+'" src="img/'+p[0]+'" alt="Portada de '+m.t+'" loading="lazy" width="'+p[1]+'" height="'+p[2]+'"'+(p[4]?' style="'+p[4]+'"':'')+'>';
+ }
+ function card(m){
+  var i=MAGS.indexOf(m),done=added[i];
+  var badge=m.out?'<span class="badge b-out">Agotado</span>':m.was?'<span class="badge b-holo">Oferta</span>':'';
+  var cover=m.ph?'<span class="cover has-photo">'+photo(m)+badge+'</span>':'<span class="cover'+(DARK[m.c]?' dark':'')+'" style="background:var(--c'+m.c+')">'+badge+'<span class="mast">'+m.m+'</span><span class="no'+(m.txt?' txt':'')+'">'+m.n+'</span><small>foto real</small></span>';
+  var price=m.out?'<span class="p">'+eur(m.p)+'</span><a class="notify" href="#">Avísame cuando vuelva<span class="sr"> '+m.t+'</span></a>'
+   :'<span class="p">'+eur(m.p)+(m.was?'<s><span class="sr">antes </span>'+eur(m.was)+'</s>':'')+'</span>';
+  var add=m.out?'':'<button class="add'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓':'+')+'</button>';
+  return '<li class="item'+(m.out?' out':'')+'">'+cover+'<h3><a href="#">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h3>'+price+add+'</li>';
+ }
+ function chips(){
+  var c=[];
+  if(st.mast!=='all')c.push(['mast',st.mast]);
+  if(st.stock)c.push(['stock','En stock']);
+  if(st.out)c.push(['out','Agotado']);
+  if(st.price==='lo')c.push(['price','Menos de 30 €']);
+  if(st.price==='hi')c.push(['price','30 € o más']);
+  if(st.offer)c.push(['offer','Solo rebajadas']);
+  return c;
+ }
+ function render(focusFrom){
+  var res=sorted(MAGS.filter(match)),shown=res.slice(0,st.limit),rest=res.length-shown.length;
+  $('wall').innerHTML=shown.map(card).join('');
+  $('wall').hidden=!res.length;
+  $('res-count').textContent=rest>0?'Mostrando '+shown.length+' de '+plural(res.length):plural(res.length);
+  // active filters
+  var ch=chips();
+  $('active').innerHTML=ch.map(function(c){return '<button type="button" data-k="'+c[0]+'" aria-label="Quitar filtro: '+c[1]+'">'+c[1]+' ×</button>'}).join('')+(ch.length?'<button type="button" class="clear" data-k="all">Quitar filtros</button>':'');
+  var panel=ch.filter(function(c){return c[0]!=='mast'}).length;
+  $('f-n').textContent=panel;$('f-n').hidden=!panel;
+  $('f-open').setAttribute('aria-label',panel?'Filtrar, '+panel+' activos':'Filtrar');
+  $('f-apply').textContent='Ver '+plural(res.length);
+  // empty state
+  $('empty').hidden=!!res.length;
+  if(!res.length){
+   var noStock=st.mast!=='all'&&st.stock&&!st.out&&!MAGS.some(function(m){return inMast(m,st.mast)&&!m.out});
+   $('empty-title').textContent=noStock?'No hay revistas de esa cabecera en stock':'No hay revistas con esos filtros';
+   $('empty-text').textContent=noStock?'Tus filtros siguen puestos. Quítalos para ver las agotadas y pedir que te avisemos cuando vuelvan.':'Tus filtros siguen puestos. Quita alguno o quítalos todos para ver más revistas.';
+  }
+  // load more + pixel progress
+  $('more').hidden=!res.length||res.length<=PAGE;
+  $('more-btn').hidden=rest<=0;
+  $('more-btn').textContent='Ver más revistas ('+rest+' restantes)';
+  $('more-text').textContent='Has visto '+shown.length+' de '+res.length;
+  var on=res.length?Math.round(shown.length/res.length*8):0;
+  [].forEach.call($('pixels').children,function(px,i){px.className=i<on?'on':''});
+  if(focusFrom!=null){var li=$('wall').children[focusFrom];if(li)li.querySelector('a').focus()}
+ }
+ function mastButtons(){
+  var all=[['all','Todas',MAGS.length]].concat(MASTS.map(function(k){return [k,k,MAGS.filter(function(m){return inMast(m,k)}).length]}));
+  $('masts').innerHTML=all.map(function(a){return '<button class="sticker" type="button" data-m="'+a[0]+'" aria-pressed="'+(st.mast===a[0])+'">'+a[1]+' <em aria-label="'+plural(a[2])+'">'+a[2]+'</em></button>'}).join('');
+ }
+ function syncForm(){
+  $('f-stock').checked=st.stock;$('f-out').checked=st.out;$('f-offer').checked=st.offer;
+  document.querySelector('input[name=price][value='+st.price+']').checked=true;
+  [].forEach.call($('masts').children,function(b){b.setAttribute('aria-pressed',String(b.dataset.m===st.mast))});
+ }
+ function update(){st.limit=PAGE;syncForm();render()}
+ function clearAll(){st.mast='all';st.stock=st.out=st.offer=false;st.price='all';update()}
+ // static counts next to each filter option (whole collection)
+ function n(f){return MAGS.filter(f).length}
+ $('n-stock').textContent=n(function(m){return !m.out});
+ $('n-out').textContent=n(function(m){return m.out});
+ $('n-lo').textContent=n(function(m){return m.p<30});
+ $('n-hi').textContent=n(function(m){return m.p>=30});
+ $('n-offer').textContent=n(function(m){return m.was});
+
+ $('masts').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st.mast=b.dataset.m;update()});
+ $('f-form').addEventListener('change',function(){
+  st.stock=$('f-stock').checked;st.out=$('f-out').checked;st.offer=$('f-offer').checked;
+  st.price=document.querySelector('input[name=price]:checked').value;update();
+ });
+ $('sort').addEventListener('change',function(){st.sort=this.value;render()});
+ $('active').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var k=b.dataset.k;
+  if(k==='all'){clearAll()}else{if(k==='mast')st.mast='all';else if(k==='price')st.price='all';else st[k]=false;update()}
+  $('h-res').focus();
+ });
+ $('f-clear').addEventListener('click',clearAll);
+ $('empty-clear').addEventListener('click',function(){clearAll();$('h-res').focus()});
+ $('more-btn').addEventListener('click',function(){var from=st.limit;st.limit=MAGS.length;render(from)});
+ $('demo-empty').addEventListener('click',function(){
+  st.mast='Especiales';st.stock=true;st.out=false;st.offer=false;st.price='all';update();
+  $('h-res').scrollIntoView({block:'start'});$('h-res').focus({preventScroll:true});
+ });
+
+ // quick add (05)
+ var cnt=0,count=$('count'),toast=$('toast'),msg=$('toast-msg'),tt;
+ $('wall').addEventListener('click',function(e){
+  var b=e.target.closest('.add');if(!b||b.classList.contains('done'))return;
+  var m=MAGS[b.dataset.i];added[b.dataset.i]=1;
+  cnt++;count.textContent=cnt;count.classList.remove('bump');void count.offsetWidth;count.classList.add('bump');
+  setTimeout(function(){count.classList.remove('bump')},300);
+  b.textContent='✓';b.classList.add('done');b.setAttribute('aria-label',m.t+' añadido');
+  msg.textContent='Añadido: '+m.t;toast.classList.add('show');
+  clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2600);
+ });
+
+ // filters as bottom sheet on mobile
+ var sheet=$('filters'),back=$('backdrop'),mq=window.matchMedia('(max-width:900px)');
+ function openSheet(){
+  sheet.classList.add('open');back.classList.add('open');
+  sheet.setAttribute('role','dialog');sheet.setAttribute('aria-modal','true');
+  $('f-open').setAttribute('aria-expanded','true');$('f-close').focus();
+ }
+ function closeSheet(){
+  if(!sheet.classList.contains('open'))return;
+  sheet.classList.remove('open');back.classList.remove('open');
+  sheet.removeAttribute('role');sheet.removeAttribute('aria-modal');
+  $('f-open').setAttribute('aria-expanded','false');$('f-open').focus();
+ }
+ $('f-open').setAttribute('aria-expanded','false');
+ $('f-open').addEventListener('click',openSheet);
+ $('f-close').addEventListener('click',closeSheet);
+ $('f-apply').addEventListener('click',closeSheet);
+ back.addEventListener('click',closeSheet);
+ sheet.addEventListener('keydown',function(e){
+  if(!sheet.classList.contains('open'))return;
+  if(e.key==='Escape'){closeSheet();return}
+  if(e.key!=='Tab')return;
+  var f=sheet.querySelectorAll('button,input'),first=f[0],last=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ });
+ mq.addEventListener('change',function(e){if(!e.matches&&sheet.classList.contains('open')){sheet.classList.remove('open');back.classList.remove('open');sheet.removeAttribute('role');sheet.removeAttribute('aria-modal')}});
+
+ mastButtons();render();
+})();
+</script>
+</body>
+</html>
