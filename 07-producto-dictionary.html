@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
-<head><meta name="robots" content="noindex,nofollow">
+<head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atlas Novus · 07 Producto Dictionary (Y2K)</title>
@@ -218,7 +219,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
  .more li{scroll-snap-align:start}
  .more .mast{font-size:20px}
  .add{width:44px;height:44px}
- .toast{left:16px;right:16px;bottom:96px;width:auto}
+ .toast{left:16px;right:16px;bottom:calc(var(--tb-h) + 16px);width:auto}
  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-top:2px solid var(--ink);transition:transform .25s,visibility 0s}
  .sticky.off{transform:translateY(100%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
  .sticky .p{font-weight:700;font-size:18px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -239,12 +240,100 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 .cover .photo.fit{object-fit:contain}
 .shot.has-photo{padding:0;background:var(--paper);overflow:hidden}
 .shot .photo,.thumbs .photo{position:absolute;max-width:none;height:auto}
+/* v3 · referencias de Mariam (2026-11-13): Y2K de verdad + estética japonesa */
+:root{--lime:#A6FF3B;--sky-1:#2F7FE6;--sky-2:#CFE8FF;--hill:#4FA83A;--xp-edge:#003C74;--xp-face:#ECE9D8;--washi:#F4EEE1;--tb-h:56px}
+/* XP window: blue title bar + three control boxes */
+.win{border:3px solid var(--blue)}
+.win-bar{background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 18%,#0047FF 78%,#0033B8 100%);color:#fff;padding:5px 6px 5px 10px;text-shadow:1px 1px 0 rgba(0,0,0,.35)}
+.xp-ctl{display:inline-flex;gap:3px;flex:0 0 auto}
+.xp-ctl i{font:700 12px/1 var(--font);font-style:normal;width:21px;height:21px;display:grid;place-items:center;color:#fff;border:1px solid #fff;border-radius:3px;background:linear-gradient(180deg,#6FA6FF,#1D5EF0);text-shadow:none}
+.xp-ctl i.x{background:linear-gradient(180deg,#F08A6C,#C4401C)}
+/* XP buttons: secondary buttons look like Windows XP buttons */
+.btn.sec,.btn.xp{background:linear-gradient(180deg,#FFFFFF 0%,#F4F2EA 55%,#D9D3C1 100%);background-color:var(--xp-face);color:#000;border:1px solid var(--xp-edge);border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);text-transform:none;letter-spacing:0;font-size:15px}
+.btn.sec:hover,.btn.xp:hover{background:linear-gradient(180deg,#FFFFFF 0%,#FFF4D6 55%,#F7C56B 100%);border-color:#C98A00;color:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 0 0 2px #F7C56B}
+/* NEW sticker: lime, rotated, red frame on the cover (reference 1-captura) */
+.sticker.new{background:var(--lime);color:#000;border:0;border-radius:10px;font:900 16px/1 "Arial Black",Helvetica,Arial,sans-serif;letter-spacing:.08em;padding:8px 13px;transform:rotate(-18deg);animation:none}
+.cover .sticker.new{top:16px;left:8px;right:auto}
+.cover:has(.sticker.new){outline:8px solid var(--red);outline-offset:3px}
+/* Poster spaces: Y2K futurist (sky, hill, XP windows) and Japan style (washi, red sun, vertical text) */
+.poster-space{position:relative;overflow:hidden;padding:64px 0}
+.poster-space .wrap{position:relative;display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
+.poster-space h2{font:900 44px/1 var(--display);letter-spacing:-.03em}
+.poster-space p{margin:16px 0 24px;max-width:400px}
+.poster-space .walls{display:flex;justify-content:center;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.space-y2k{background:radial-gradient(ellipse 70% 40% at 50% 112%,var(--hill) 0 98%,transparent 100%),radial-gradient(ellipse 22% 9% at 18% 20%,rgba(255,255,255,.9),transparent 70%),radial-gradient(ellipse 18% 7% at 78% 14%,rgba(255,255,255,.85),transparent 70%),radial-gradient(ellipse 26% 8% at 62% 34%,rgba(255,255,255,.6),transparent 70%),linear-gradient(180deg,var(--sky-1),var(--sky-2) 85%);color:#fff}
+.space-y2k h2,.space-y2k p{text-shadow:2px 2px 0 rgba(0,0,0,.35)}
+.space-y2k .poster-win{box-shadow:8px 8px 0 rgba(0,0,0,.35);background:#fff;width:300px;max-width:100%}
+.space-y2k .poster-win:nth-child(2){transform:rotate(2deg) translateY(28px)}
+.poster-win .win-body{padding:10px;background:var(--xp-face)}
+.poster-win img{display:block;width:100%;height:auto;border:1px solid #808080}
+.space-jp{background:repeating-linear-gradient(90deg,rgba(0,0,0,.018) 0 2px,transparent 2px 7px),var(--washi);color:var(--ink)}
+.space-jp::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--red);right:6%;top:50%;transform:translateY(-50%);opacity:.92}
+.space-jp .tate{position:absolute;left:24px;top:40px;writing-mode:vertical-rl;font:700 22px/1.2 var(--font);letter-spacing:.3em;color:var(--red)}
+.frame{position:relative;background:#fff;padding:18px;border:10px solid #111;box-shadow:6px 8px 0 rgba(0,0,0,.18);width:280px;max-width:100%}
+.frame::before{content:"";position:absolute;left:50%;top:-34px;width:2px;height:26px;background:#111;transform:translateX(-50%)}
+.frame img{display:block;width:100%;height:auto}
+.frame:nth-child(2){transform:translateY(32px)}
+.poster-space.compact{padding:40px 0}
+.poster-space.compact h2{font-size:32px}
+.poster-space.compact .frame,.poster-space.compact .poster-win{width:220px}
+/* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
+body{padding-bottom:var(--tb-h)}
+.taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start:hover{filter:brightness(1.08)}
+.tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
+.tb-buy:hover{background:rgba(255,255,255,.25)}
+.tb-news{display:flex;align-items:center;gap:8px;margin-left:auto}
+.tb-news span.tb-label{white-space:nowrap}
+.tb-news input{width:240px;min-height:40px;padding:0 10px;border:1px solid var(--xp-edge);border-radius:2px;background:#fff;color:#000;font:15px var(--font)}
+.tb-news input[aria-invalid="true"]{outline:2px dashed #fff}
+.tb-news button{min-height:40px;padding:0 14px;font:700 14px var(--font);color:#000;border:1px solid var(--xp-edge);border-radius:4px;background:linear-gradient(180deg,#FFFFFF 0%,#F4F2EA 55%,#D9D3C1 100%);cursor:pointer}
+.tb-msg{min-width:0;font-size:13px}
+.tb-mail{display:none}
+.tb-clock{display:inline-flex;align-items:center;gap:6px;height:100%;padding:0 14px;margin-right:-12px;background:linear-gradient(180deg,#1E9BF5,#0F76D8);border-left:1px solid #062F7A;font-size:13px;white-space:nowrap}
+.taskbar :focus-visible{outline:3px solid #fff;outline-offset:2px}
+.toast{bottom:calc(var(--tb-h) + 16px)}
+@media (max-width:900px){
+ .poster-space{padding:40px 0}
+ .poster-space .wrap{grid-template-columns:1fr;gap:28px}
+ .poster-space h2{font-size:30px}
+ .poster-space .walls{gap:20px}
+ .space-y2k .poster-win,.frame{width:calc(50% - 10px)}
+ .frame{padding:8px;border-width:6px}
+ .space-jp::before{width:200px;height:200px;right:-40px;top:70px;transform:none}
+ .space-jp .tate{display:none}
+ .taskbar{gap:8px;padding-right:8px}
+ .tb-start{padding:0 14px 0 10px;font-size:16px}
+ .tb-buy{flex:1 1 auto;justify-content:center;padding:0 10px;font-size:13px}
+ .tb-clock{display:none}
+ .tb-mail{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;font:700 13px var(--font);cursor:pointer}
+ .tb-news{display:none;position:fixed;left:0;right:0;bottom:var(--tb-h);margin:0;padding:12px;flex-wrap:wrap;background:#0040E8;border-top:1px solid #9CC3FF}
+ .taskbar.open .tb-news{display:flex}
+ .tb-news input{flex:1 1 160px;width:auto}
+ .tb-news .tb-msg{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){.space-y2k .poster-win:nth-child(2),.frame:nth-child(2){transform:none}}
+/* v3 · ajustes de este artboard */
+.poster-space.compact .tate{left:16px;top:24px;font-size:16px}
+@media (max-width:900px){.poster-space.compact .frame,.poster-space.compact .poster-win{width:calc(50% - 10px)}.space-jp.compact::before{top:auto;bottom:32px}.poster-space.compact .walls{padding-top:12px}.taskbar.open~.toast{bottom:calc(var(--tb-h) + 104px)}}
+:root{--blue:#0047FF;--blue-2:#0033B8}
+.win-bar .xp-ctl{letter-spacing:0}
+#sticky{display:none}
+.poster-space+.block.flush{padding-top:56px}
+@media (max-width:900px){.poster-space+.block.flush{padding-top:40px}.tb-start{padding:0 10px 0 8px;font-size:14px;gap:6px}.tb-buy{padding:0 6px;font-size:12px}.tb-mail{padding:0 8px;font-size:12px;line-height:1.15;text-align:left}}
+/* v3.1 · arreglos tras capturas (2026-11-13) */
+.space-y2k{background:radial-gradient(ellipse 70% 40% at 50% 112%,var(--hill) 0 98%,transparent 100%),radial-gradient(ellipse 22% 9% at 18% 20%,rgba(255,255,255,.55),transparent 70%),radial-gradient(ellipse 18% 7% at 78% 14%,rgba(255,255,255,.6),transparent 70%),linear-gradient(180deg,#1A56C4 0%,var(--sky-1) 50%,var(--sky-2) 92%)}
+.space-y2k p{font-weight:700}
+.space-jp .tate{left:auto;right:24px}
+@media (max-width:900px){.space-jp::before{top:auto;bottom:-60px;right:-60px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="ticker" aria-label="Novedades">
- <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span></div>
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
 </div>
 <header>
  <div class="wrap bar">
@@ -282,7 +371,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
   </div>
 
   <div class="buy">
-   <span class="sticker">Best Seller <span aria-hidden="true">✦</span></span>
+   <span class="sticker">Best Seller</span>
    <h1>A Dictionary of Color Combinations · Vol. 1</h1>
    <p class="by">Sanzo Wada · Seigensha</p>
    <p class="rating"><span aria-hidden="true">★★★★★</span>238 valoraciones reales de la tienda en Vinted y Etsy · media 5,0</p>
@@ -357,7 +446,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
    <p class="note">Las opiniones de este libro en la web aparecerán aquí cuando lleguen las primeras.</p>
   </section>
   <section class="win" aria-labelledby="h-faq">
-   <div class="win-bar"><h2 id="h-faq">Preguntas antes de comprar</h2><span aria-hidden="true">_□×</span></div>
+   <div class="win-bar"><h2 id="h-faq">Preguntas antes de comprar</h2><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
    <div class="win-strip" aria-hidden="true"></div>
    <div class="faq">
     <details open><summary>¿Está en japonés?</summary><p class="todo">[por confirmar]</p></details>
@@ -369,8 +458,23 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
   </section>
  </div>
 
+ <section class="poster-space compact space-jp" aria-labelledby="h-post-jp-07">
+  <span class="tate" aria-hidden="true">日本のポスター</span>
+  <div class="wrap">
+   <div>
+    <h2 id="h-post-jp-07">Pósters de Japón</h2>
+    <p>Colores tradicionales y grabados japoneses para la pared de tu estudio.</p>
+    <a class="btn" href="#">Ver los pósters</a>
+   </div>
+   <div class="walls">
+    <figure class="frame"><img src="img/poster-japanese-traditional-color-1.jpg" alt="Póster Japanese Traditional Color: carta de colores tradicionales de Japón" loading="lazy" width="900" height="1272"></figure>
+    <figure class="frame"><img src="img/rio-de-grullas-xilografia-japonesa-original-s-xx-1.jpg" alt="Río de Grullas, xilografía japonesa original del siglo XX" loading="lazy" width="588" height="847"></figure>
+   </div>
+  </div>
+ </section>
+
  <section class="wrap block flush" aria-labelledby="h-mas">
-  <div class="head"><h2 id="h-mas">También te gustará <span aria-hidden="true">✧</span></h2><a href="#">Ver libros de diseño</a></div>
+  <div class="head"><h2 id="h-mas">También te gustará</h2><a href="#">Ver libros de diseño</a></div>
   <ul class="more">
    <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito">+</button></li>
    <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito">+</button></li>
@@ -381,13 +485,26 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 </main>
 <footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
 
+<div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
+ <a class="tb-start" href="#">Comprar</a>
+ <button class="tb-buy" type="button" data-click="#main-add">Añadir al carrito · 25,65 €</button>
+ <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
+ <form class="tb-news" id="tb-news" novalidate>
+  <label class="tb-label" for="tb-email">Novedades de Japón en tu correo</label>
+  <input id="tb-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.es" aria-describedby="tb-msg">
+  <button type="submit">Apuntarme</button>
+  <span class="tb-msg" id="tb-msg" role="status"></span>
+ </form>
+ <span class="tb-clock" aria-hidden="true">東京 <b id="tb-time">--:--</b></span>
+</div>
+
 <div class="sticky" id="sticky" role="region" aria-label="Compra rápida">
  <span class="p">25,65 €<small>Dictionary vol. 1</small></span>
  <button class="btn gloss js-main" type="button" data-name="A Dictionary of Color Combinations · Vol. 1">Añadir al carrito</button>
 </div>
 
 <div class="toast win" id="toast" role="status" aria-live="polite">
- <div class="win-bar"><strong>Carrito</strong><span aria-hidden="true">_□×</span></div>
+ <div class="win-bar"><strong>Carrito</strong><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
  <div class="win-strip" aria-hidden="true"></div>
  <div class="toast-body">
   <p id="toast-msg"></p>
@@ -439,6 +556,21 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
   var bar=document.getElementById('sticky');
   new IntersectionObserver(function(e){bar.classList.toggle('off',e[0].isIntersecting)}).observe(document.getElementById('main-add'));
  }
+})();
+</script>
+<script>
+(function(){
+ var bar=document.getElementById('taskbar');if(!bar)return;
+ var mail=bar.querySelector('.tb-mail'),form=document.getElementById('tb-news'),email=document.getElementById('tb-email'),msg=document.getElementById('tb-msg'),time=document.getElementById('tb-time');
+ mail.addEventListener('click',function(){var o=bar.classList.toggle('open');mail.setAttribute('aria-expanded',o?'true':'false');if(o)email.focus()});
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!email.value||!email.checkValidity()){email.setAttribute('aria-invalid','true');msg.textContent='Escribe un correo válido, por ejemplo nombre@correo.es';email.focus();return}
+  email.removeAttribute('aria-invalid');msg.textContent='Apuntado. Te avisaremos de las novedades.';form.querySelector('button').textContent='Apuntado ✓';
+ });
+ bar.querySelectorAll('[data-click]').forEach(function(b){b.addEventListener('click',function(){var t=document.querySelector(b.dataset.click);if(t)t.click()})});
+ function tick(){try{time.textContent=new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Tokyo'}).format(new Date())}catch(e){}}
+ tick();setInterval(tick,30000);
 })();
 </script>
 </body>

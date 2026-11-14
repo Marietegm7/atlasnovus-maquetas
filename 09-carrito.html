@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
-<head><meta name="robots" content="noindex,nofollow">
+<head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atlas Novus · 09 Carrito (cajón, página y vacío)</title>
@@ -256,6 +257,94 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 .cover .photo.mock{inset:auto;height:auto;max-width:none}
 .cover .photo.fit{object-fit:contain}
 @media (max-width:900px){html,body{overflow-x:clip}}
+/* v3 · referencias de Mariam (2026-11-13): Y2K de verdad + estética japonesa */
+:root{--lime:#A6FF3B;--sky-1:#2F7FE6;--sky-2:#CFE8FF;--hill:#4FA83A;--xp-edge:#003C74;--xp-face:#ECE9D8;--washi:#F4EEE1;--tb-h:56px}
+/* XP window: blue title bar + three control boxes */
+.win{border:3px solid var(--blue)}
+.win-bar{background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 18%,#0047FF 78%,#0033B8 100%);color:#fff;padding:5px 6px 5px 10px;text-shadow:1px 1px 0 rgba(0,0,0,.35)}
+.xp-ctl{display:inline-flex;gap:3px;flex:0 0 auto}
+.xp-ctl i{font:700 12px/1 var(--font);font-style:normal;width:21px;height:21px;display:grid;place-items:center;color:#fff;border:1px solid #fff;border-radius:3px;background:linear-gradient(180deg,#6FA6FF,#1D5EF0);text-shadow:none}
+.xp-ctl i.x{background:linear-gradient(180deg,#F08A6C,#C4401C)}
+/* XP buttons: secondary buttons look like Windows XP buttons */
+.btn.sec,.btn.xp{background:linear-gradient(180deg,#FFFFFF 0%,#F4F2EA 55%,#D9D3C1 100%);background-color:var(--xp-face);color:#000;border:1px solid var(--xp-edge);border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);text-transform:none;letter-spacing:0;font-size:15px}
+.btn.sec:hover,.btn.xp:hover{background:linear-gradient(180deg,#FFFFFF 0%,#FFF4D6 55%,#F7C56B 100%);border-color:#C98A00;color:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 0 0 2px #F7C56B}
+/* NEW sticker: lime, rotated, red frame on the cover (reference 1-captura) */
+.sticker.new{background:var(--lime);color:#000;border:0;border-radius:10px;font:900 16px/1 "Arial Black",Helvetica,Arial,sans-serif;letter-spacing:.08em;padding:8px 13px;transform:rotate(-18deg);animation:none}
+.cover .sticker.new{top:16px;left:8px;right:auto}
+.cover:has(.sticker.new){outline:8px solid var(--red);outline-offset:3px}
+/* Poster spaces: Y2K futurist (sky, hill, XP windows) and Japan style (washi, red sun, vertical text) */
+.poster-space{position:relative;overflow:hidden;padding:64px 0}
+.poster-space .wrap{position:relative;display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
+.poster-space h2{font:900 44px/1 var(--display);letter-spacing:-.03em}
+.poster-space p{margin:16px 0 24px;max-width:400px}
+.poster-space .walls{display:flex;justify-content:center;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.space-y2k{background:radial-gradient(ellipse 70% 40% at 50% 112%,var(--hill) 0 98%,transparent 100%),radial-gradient(ellipse 22% 9% at 18% 20%,rgba(255,255,255,.9),transparent 70%),radial-gradient(ellipse 18% 7% at 78% 14%,rgba(255,255,255,.85),transparent 70%),radial-gradient(ellipse 26% 8% at 62% 34%,rgba(255,255,255,.6),transparent 70%),linear-gradient(180deg,var(--sky-1),var(--sky-2) 85%);color:#fff}
+.space-y2k h2,.space-y2k p{text-shadow:2px 2px 0 rgba(0,0,0,.35)}
+.space-y2k .poster-win{box-shadow:8px 8px 0 rgba(0,0,0,.35);background:#fff;width:300px;max-width:100%}
+.space-y2k .poster-win:nth-child(2){transform:rotate(2deg) translateY(28px)}
+.poster-win .win-body{padding:10px;background:var(--xp-face)}
+.poster-win img{display:block;width:100%;height:auto;border:1px solid #808080}
+.space-jp{background:repeating-linear-gradient(90deg,rgba(0,0,0,.018) 0 2px,transparent 2px 7px),var(--washi);color:var(--ink)}
+.space-jp::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--red);right:6%;top:50%;transform:translateY(-50%);opacity:.92}
+.space-jp .tate{position:absolute;left:24px;top:40px;writing-mode:vertical-rl;font:700 22px/1.2 var(--font);letter-spacing:.3em;color:var(--red)}
+.frame{position:relative;background:#fff;padding:18px;border:10px solid #111;box-shadow:6px 8px 0 rgba(0,0,0,.18);width:280px;max-width:100%}
+.frame::before{content:"";position:absolute;left:50%;top:-34px;width:2px;height:26px;background:#111;transform:translateX(-50%)}
+.frame img{display:block;width:100%;height:auto}
+.frame:nth-child(2){transform:translateY(32px)}
+.poster-space.compact{padding:40px 0}
+.poster-space.compact h2{font-size:32px}
+.poster-space.compact .frame,.poster-space.compact .poster-win{width:220px}
+/* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
+body{padding-bottom:var(--tb-h)}
+.taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start:hover{filter:brightness(1.08)}
+.tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
+.tb-buy:hover{background:rgba(255,255,255,.25)}
+.tb-news{display:flex;align-items:center;gap:8px;margin-left:auto}
+.tb-news span.tb-label{white-space:nowrap}
+.tb-news input{width:240px;min-height:40px;padding:0 10px;border:1px solid var(--xp-edge);border-radius:2px;background:#fff;color:#000;font:15px var(--font)}
+.tb-news input[aria-invalid="true"]{outline:2px dashed #fff}
+.tb-news button{min-height:40px;padding:0 14px;font:700 14px var(--font);color:#000;border:1px solid var(--xp-edge);border-radius:4px;background:linear-gradient(180deg,#FFFFFF 0%,#F4F2EA 55%,#D9D3C1 100%);cursor:pointer}
+.tb-msg{min-width:0;font-size:13px}
+.tb-mail{display:none}
+.tb-clock{display:inline-flex;align-items:center;gap:6px;height:100%;padding:0 14px;margin-right:-12px;background:linear-gradient(180deg,#1E9BF5,#0F76D8);border-left:1px solid #062F7A;font-size:13px;white-space:nowrap}
+.taskbar :focus-visible{outline:3px solid #fff;outline-offset:2px}
+.toast{bottom:calc(var(--tb-h) + 16px)}
+@media (max-width:900px){
+ .poster-space{padding:40px 0}
+ .poster-space .wrap{grid-template-columns:1fr;gap:28px}
+ .poster-space h2{font-size:30px}
+ .poster-space .walls{gap:20px}
+ .space-y2k .poster-win,.frame{width:calc(50% - 10px)}
+ .frame{padding:8px;border-width:6px}
+ .space-jp::before{width:200px;height:200px;right:-40px;top:70px;transform:none}
+ .space-jp .tate{display:none}
+ .taskbar{gap:8px;padding-right:8px}
+ .tb-start{padding:0 14px 0 10px;font-size:16px}
+ .tb-buy{flex:1 1 auto;justify-content:center;padding:0 10px;font-size:13px}
+ .tb-clock{display:none}
+ .tb-mail{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;font:700 13px var(--font);cursor:pointer}
+ .tb-news{display:none;position:fixed;left:0;right:0;bottom:var(--tb-h);margin:0;padding:12px;flex-wrap:wrap;background:#0040E8;border-top:1px solid #9CC3FF}
+ .taskbar.open .tb-news{display:flex}
+ .tb-news input{flex:1 1 160px;width:auto}
+ .tb-news .tb-msg{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){.space-y2k .poster-win:nth-child(2),.frame:nth-child(2){transform:none}}
+/* v3 · ajustes de este artboard */
+.poster-space.compact .tate{left:16px;top:24px;font-size:16px}
+@media (max-width:900px){.poster-space.compact .frame,.poster-space.compact .poster-win{width:calc(50% - 10px)}.space-jp.compact::before{top:auto;bottom:32px}.poster-space.compact .walls{padding-top:12px}.taskbar.open~.toast{bottom:calc(var(--tb-h) + 104px)}}
+.cover:has(.sticker.new){outline:0}
+.cover:has(.sticker.new)::after{content:"";position:absolute;inset:0;z-index:1;border:8px solid var(--red);pointer-events:none}
+.cover .sticker.new{top:22px;left:14px}
+.drawer.win{border-width:0 0 0 3px}
+.drawer .win-bar .xp-ctl{margin-left:auto}
+/* v3.1 · arreglos tras capturas (2026-11-13) */
+.space-y2k{background:radial-gradient(ellipse 70% 40% at 50% 112%,var(--hill) 0 98%,transparent 100%),radial-gradient(ellipse 22% 9% at 18% 20%,rgba(255,255,255,.55),transparent 70%),radial-gradient(ellipse 18% 7% at 78% 14%,rgba(255,255,255,.6),transparent 70%),linear-gradient(180deg,#1A56C4 0%,var(--sky-1) 50%,var(--sky-2) 92%)}
+.space-y2k p{font-weight:700}
+.space-jp .tate{left:auto;right:24px}
+@media (max-width:900px){.space-jp::before{top:auto;bottom:-60px;right:-60px}}
 </style>
 </head>
 <body>
@@ -273,7 +362,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 </div>
 
 <div class="ticker" aria-label="Novedades" data-bg>
- <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Nuevas llegadas cada semana</span></div>
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
 </div>
 <header data-bg>
  <div class="wrap bar">
@@ -316,7 +405,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
  <div id="v-page" data-cart data-page hidden>
   <div data-full>
    <section class="wrap cartpage" aria-labelledby="h-cart">
-    <h1 id="h-cart"><span class="chrome">Tu carrito</span><span class="spark" aria-hidden="true">✧</span></h1>
+    <h1 id="h-cart"><span class="chrome">Tu carrito</span></h1>
     <p class="count" data-count>2 artículos</p>
     <div class="cart-grid">
      <div>
@@ -324,7 +413,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
       <a class="back" href="#" data-act="portadas">Seguir viendo portadas</a>
      </div>
      <aside class="win" aria-labelledby="h-sum">
-      <div class="win-bar"><h2 id="h-sum">Resumen ✦</h2><span class="deco" aria-hidden="true">_ □ ×</span></div>
+      <div class="win-bar"><h2 id="h-sum">Resumen</h2><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
       <div class="win-body">
        <p class="sum-row"><span>Subtotal</span><strong data-subtotal>59,85 €</strong></p>
        <p class="sum-note">Envío: se calcula en el siguiente paso</p>
@@ -357,16 +446,41 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
    </section>
   </div>
   <section class="wrap cartpage empty" data-empty="h1" hidden></section>
+  <section class="poster-space compact space-y2k" aria-labelledby="h-post-y2k-09">
+   <div class="wrap">
+    <div>
+     <h2 id="h-post-y2k-09">Pósters para tu escritorio</h2>
+     <p>Gráfica japonesa de los 2000 para colgar encima de la mesa donde diseñas.</p>
+     <a class="btn xp" href="#">Ver los pósters</a>
+    </div>
+    <div class="walls">
+     <figure class="win poster-win"><div class="win-bar"><span>TONBO_2003.jpg</span><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div><div class="win-body"><img src="img/poster-tonbo-2003-edition-recorte.jpg" alt="Póster TONBO 2003 Edition: libélula sobre fondo verde" loading="lazy" width="296" height="443"></div></figure>
+    </div>
+   </div>
+  </section>
  </div>
 </main>
 <footer class="wrap" data-bg><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+
+<div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
+ <a class="tb-start" href="#">Comprar</a>
+ <a class="tb-buy" href="#">Finalizar compra</a>
+ <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
+ <form class="tb-news" id="tb-news" novalidate>
+  <label class="tb-label" for="tb-email">Novedades de Japón en tu correo</label>
+  <input id="tb-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.es" aria-describedby="tb-msg">
+  <button type="submit">Apuntarme</button>
+  <span class="tb-msg" id="tb-msg" role="status"></span>
+ </form>
+ <span class="tb-clock" aria-hidden="true">東京 <b id="tb-time">--:--</b></span>
+</div>
 
 <!-- Cajón del carrito: ventana Y2K -->
 <div class="dim" id="dim" data-act="close" hidden></div>
 <div class="drawer win" id="drawer" role="dialog" aria-modal="true" aria-labelledby="h-drawer" data-cart>
  <div class="win-bar">
-  <h2 id="h-drawer">Tu carrito ✦</h2>
-  <span class="deco" aria-hidden="true">_ □</span>
+  <h2 id="h-drawer">Tu carrito</h2>
+  <span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i></span>
   <button type="button" class="x" id="close" data-act="close" aria-label="Cerrar carrito">×</button>
  </div>
  <div class="d-full" data-full>
@@ -399,7 +513,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 </div>
 
 <div class="toast win" id="toast">
- <div class="win-bar"><strong>Carrito ✦</strong><span class="deco" aria-hidden="true">_ □ ×</span></div>
+ <div class="win-bar"><strong>Carrito</strong><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
  <div class="win-body"><span id="toast-msg" role="status"></span><button type="button" id="toast-act" hidden></button></div>
 </div>
 <p class="sr" id="live" role="status"></p>
@@ -458,7 +572,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
    (tag==='h1'?'<h2 class="sub-h">Portadas para empezar</h2>':'<h3 class="sub-h">Portadas para empezar</h3>')+
    '<ul class="wall w4">'+
    '<li class="item">'+card('dict1',0,'sm','<span class="sticker">Best Seller</span>')+'</li>'+
-   '<li class="item">'+card('pop950',0,'sm','<span class="sticker l">Nuevo <span aria-hidden="true">✦</span></span>')+'</li>'+
+   '<li class="item">'+card('pop950',0,'sm','<span class="sticker new" lang="en">NEW</span>')+'</li>'+
    '<li class="item">'+card('tjp1',0,'sm')+'</li>'+
    '<li class="item">'+card('goout',0,'sm')+'</li></ul>';
  }
@@ -576,6 +690,21 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
  $$('[data-empty]').forEach(function(e){e.innerHTML=emptyHTML(e.dataset.empty)});
  render();
  openDrawer(cartBtn);
+})();
+</script>
+<script>
+(function(){
+ var bar=document.getElementById('taskbar');if(!bar)return;
+ var mail=bar.querySelector('.tb-mail'),form=document.getElementById('tb-news'),email=document.getElementById('tb-email'),msg=document.getElementById('tb-msg'),time=document.getElementById('tb-time');
+ mail.addEventListener('click',function(){var o=bar.classList.toggle('open');mail.setAttribute('aria-expanded',o?'true':'false');if(o)email.focus()});
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!email.value||!email.checkValidity()){email.setAttribute('aria-invalid','true');msg.textContent='Escribe un correo válido, por ejemplo nombre@correo.es';email.focus();return}
+  email.removeAttribute('aria-invalid');msg.textContent='Apuntado. Te avisaremos de las novedades.';form.querySelector('button').textContent='Apuntado ✓';
+ });
+ bar.querySelectorAll('[data-click]').forEach(function(b){b.addEventListener('click',function(){var t=document.querySelector(b.dataset.click);if(t)t.click()})});
+ function tick(){try{time.textContent=new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Tokyo'}).format(new Date())}catch(e){}}
+ tick();setInterval(tick,30000);
 })();
 </script>
 </body>
