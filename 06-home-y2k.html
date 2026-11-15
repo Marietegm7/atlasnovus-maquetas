@@ -111,9 +111,7 @@ section.block,div.block{padding:56px 0}
 .item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
 .item .p{font-weight:700;font-variant-numeric:tabular-nums}
 .item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
-.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background-color .15s}
-.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
-.add.done{background:var(--ink);color:var(--paper);transform:scale(1)}
+.add{align-self:end;justify-self:end;margin:10px;z-index:3}
 .item.out .cover{filter:grayscale(1);opacity:.7}
 .item.big{grid-column:span 2;grid-row:span 2}
 .item.big .cover .mast{font-size:48px}
@@ -192,7 +190,7 @@ footer strong{display:inline-flex;align-items:center}
  .wall{grid-template-columns:1fr 1fr;gap:20px 12px}
  .item.big{grid-column:span 2;grid-row:auto}
  .item.big .cover.dict .mast{font-size:22px}
- .add{width:44px;height:44px}
+ .add{margin:6px}
  .drop .wrap{grid-template-columns:1fr;gap:24px}
  .drop h2{font-size:32px}
  .rail{grid-auto-columns:46%}
@@ -429,19 +427,37 @@ main[tabindex="-1"]:focus{outline:0}
  .pop-tiles{display:none}
 }
 @media (prefers-reduced-motion:reduce){.pop{transition:none}}
+/* v6 · red glossy buy button (.btn-buy), identical in 06–10 */
+:root{--buy-hi:#FF5A47;--buy-lo:#B80F00;--buy-ink:#6E0900}
+.btn-buy{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:2px solid var(--buy-lo);border-radius:999px;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);box-shadow:inset 0 -3px 0 var(--buy-lo),0 2px 0 var(--buy-ink),0 4px 8px rgba(0,0,0,.28);color:#fff;font:700 16px/1 var(--font);letter-spacing:0;text-transform:none;text-decoration:none;text-shadow:0 1px 0 var(--buy-ink),0 -1px 0 var(--buy-ink),1px 0 0 var(--buy-ink),-1px 0 0 var(--buy-ink);white-space:nowrap;cursor:pointer;transition:filter .15s}
+.btn-buy::before{content:"";position:absolute;z-index:-1;left:5px;right:5px;top:2px;height:46%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.1) 100%);pointer-events:none}
+.btn-buy:hover{filter:brightness(1.12) saturate(1.08)}
+.btn-buy:active{filter:brightness(.92)}
+.btn-buy:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px #fff,inset 0 -3px 0 var(--buy-lo)}
+.btn-buy .bb-ico{flex:0 0 auto;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 0 var(--buy-ink))}
+.btn-buy .bb-ico circle{fill:#fff;stroke:none}
+.btn-buy.sm{gap:6px;padding:0 14px 0 12px;font-size:14px}
+.btn-buy.lg{gap:12px;min-height:56px;padding:0 28px;font-size:19px}
+.btn-buy.lg .bb-ico{width:26px;height:26px}
+.btn-buy.ico{width:44px;padding:0}
+.btn-buy.ico .bb-t{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.btn-buy.done,.btn-buy.done:hover{filter:none;border-color:var(--ink);background:linear-gradient(180deg,#5C5C5C 0%,#1F1F1F 46%,var(--ink) 100%);background-color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink),0 2px 0 var(--ink),0 4px 8px rgba(0,0,0,.28);text-shadow:0 1px 0 var(--ink)}
+.btn-buy b,.btn-buy b.bump{min-width:26px;height:26px;margin-right:-8px;padding:0 5px;border:2px solid var(--buy-ink);border-radius:999px;outline:0;background:#fff;color:var(--ink);font-size:13px;text-shadow:none}
+@media (max-width:900px){.cart.btn-buy{gap:6px;padding:0 14px 0 12px}}
+@media (prefers-reduced-motion:reduce){.btn-buy{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="ticker" aria-label="Novedades">
- <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Best Seller: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Best Seller: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
 </div>
 <header>
  <div class="wrap bar">
   <a class="logo" href="#">Atlas Novus</a>
   <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
@@ -479,16 +495,16 @@ main[tabindex="-1"]:focus{outline:0}
   <ul class="wall">
    <li class="item big"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span>
     <h3><a href="#">A Dictionary of Color Combinations · Vol. 1</a></h3><span class="p">25,65 €</span>
-    <button class="add" type="button" data-name="Dictionary vol. 1" aria-label="Añadir Dictionary vol. 1 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png" alt="Portada de POPEYE Nº950" loading="lazy" width="900" height="584" style="width:354.1%;left:-120.2%;top:-35.9%"><span class="sticker new" lang="en">NEW</span></span><h3><a href="#">POPEYE Nº950</a></h3><span class="p">34,20 €</span><button class="add" type="button" data-name="POPEYE Nº950" aria-label="Añadir POPEYE Nº950 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span><h3><a href="#">BRUTUS Nº1050</a></h3><span class="p">28,03 €<s>33,20 €</s></span><button class="add" type="button" data-name="BRUTUS Nº1050" aria-label="Añadir BRUTUS Nº1050 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s>49,40 €</s></span><button class="add" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png" alt="Portada de GO OUT 201" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3><a href="#">GO OUT 201</a></h3><span class="p">32,30 €</span><button class="add" type="button" data-name="GO OUT 201" aria-label="Añadir GO OUT 201 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add" type="button" data-name="Traditional Japanese Patterns vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo" src="img/fudge-febrero-2026-vol-271-color-balance-1.jpg" alt="Portada de FUDGE 271" loading="lazy" width="900" height="1152"></span><h3><a href="#">FUDGE 271</a></h3><span class="p">28,03 €</span><button class="add" type="button" data-name="FUDGE 271" aria-label="Añadir FUDGE 271 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span><h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span><button class="add" type="button" data-name="Dictionary vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s>34,20 €</s></span><button class="add" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"></span><h3><a href="#">Old-Style Alphabet Lettering of Japan</a></h3><span class="p">32,30 €</span><button class="add" type="button" data-name="Old-Style Alphabet Lettering of Japan" aria-label="Añadir Old-Style Alphabet Lettering of Japan al carrito">+</button></li>
+    <button class="add btn-buy sm" type="button" data-name="Dictionary vol. 1" aria-label="Añadir Dictionary vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png" alt="Portada de POPEYE Nº950" loading="lazy" width="900" height="584" style="width:354.1%;left:-120.2%;top:-35.9%"><span class="sticker new" lang="en">NEW</span></span><h3><a href="#">POPEYE Nº950</a></h3><span class="p">34,20 €</span><button class="add btn-buy sm" type="button" data-name="POPEYE Nº950" aria-label="Añadir POPEYE Nº950 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span><h3><a href="#">BRUTUS Nº1050</a></h3><span class="p">28,03 €<s>33,20 €</s></span><button class="add btn-buy sm" type="button" data-name="BRUTUS Nº1050" aria-label="Añadir BRUTUS Nº1050 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png" alt="Portada de GO OUT 201" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3><a href="#">GO OUT 201</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="GO OUT 201" aria-label="Añadir GO OUT 201 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo" src="img/fudge-febrero-2026-vol-271-color-balance-1.jpg" alt="Portada de FUDGE 271" loading="lazy" width="900" height="1152"></span><h3><a href="#">FUDGE 271</a></h3><span class="p">28,03 €</span><button class="add btn-buy sm" type="button" data-name="FUDGE 271" aria-label="Añadir FUDGE 271 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span><h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span><button class="add btn-buy sm" type="button" data-name="Dictionary vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"></span><h3><a href="#">Old-Style Alphabet Lettering of Japan</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="Old-Style Alphabet Lettering of Japan" aria-label="Añadir Old-Style Alphabet Lettering of Japan al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
   </ul>
  </section>
 
@@ -676,7 +692,7 @@ main[tabindex="-1"]:focus{outline:0}
  function added(b){
   pending=null;n++;count.textContent=n;count.classList.remove('bump');void count.offsetWidth;count.classList.add('bump');
   setTimeout(function(){count.classList.remove('bump')},300);
-  b.textContent='✓';b.classList.add('done');b.setAttribute('aria-label',b.dataset.name+' añadido');
+  b.textContent='✓ Añadido';b.classList.add('done');b.setAttribute('aria-label',b.dataset.name+' añadido');
   title.textContent='Añadido al carrito';msg.textContent='Añadido: '+b.dataset.name;
   t=setTimeout(function(){toast.classList.remove('show')},2600);
  }

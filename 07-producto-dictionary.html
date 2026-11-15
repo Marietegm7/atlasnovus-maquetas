@@ -47,7 +47,6 @@ header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--ink)}
 .btn.sec{background:#fff;color:var(--ink)}
 .btn.sec:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .btn.gloss{box-shadow:inset 0 1px 0 rgba(255,255,255,.35);background-image:linear-gradient(180deg,rgba(255,255,255,.18) 0,rgba(255,255,255,.18) 50%,rgba(255,255,255,0) 50%)}
-.btn.done,.btn.done:hover{background:var(--holo);color:var(--ink);border:2px solid var(--ink);transform:none}
 /* sticker */
 .sticker{display:inline-block;font:900 13px/1 var(--display);padding:8px 14px;border:2px solid var(--ink);border-radius:999px;background:var(--holo);background-size:200% 100%;color:var(--ink);transform:rotate(-5deg);animation:shimmer 6s linear infinite alternate;white-space:nowrap}
 @keyframes shimmer{to{background-position:100% 0}}
@@ -86,8 +85,8 @@ header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--ink)}
 .tax{font-size:14px;color:var(--ink-2)}
 .stock{display:flex;align-items:center;gap:8px;margin:16px 0;font-size:14px;font-weight:700}
 .stock::before{content:"";width:10px;height:10px;background:var(--ink)}
-.buy .btn{display:flex;width:100%}
-.buy .btn+.btn{margin-top:8px}
+.buy .btn,.buy .btn-buy{display:flex;width:100%}
+.buy .btn-buy+.btn{margin-top:8px}
 .ship{list-style:none;margin-top:24px;font-size:14px;border-bottom:1px solid var(--line)}
 .ship li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px}
 .ship b{flex:0 0 96px}
@@ -123,9 +122,7 @@ header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--ink)}
 .item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
 .item .p{font-weight:700;font-variant-numeric:tabular-nums}
 .item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
-.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:1px solid var(--ink);background:#fff;color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .15s}
-.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
-.add.done{background:var(--ink);color:#fff;transform:scale(1)}
+.add{align-self:end;justify-self:end;margin:10px;z-index:3}
 /* vol. 2 band (05 .drop) */
 .drop{background:var(--ink);color:#fff;padding:56px 0}
 .drop .wrap{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
@@ -218,13 +215,13 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
  .more{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:58%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:10px 16px 14px;scrollbar-width:none}
  .more li{scroll-snap-align:start}
  .more .mast{font-size:20px}
- .add{width:44px;height:44px}
+ .add{margin:6px}
  .toast{left:16px;right:16px;bottom:calc(var(--tb-h) + 16px);width:auto}
  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-top:2px solid var(--ink);transition:transform .25s,visibility 0s}
  .sticky.off{transform:translateY(100%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
  .sticky .p{font-weight:700;font-size:18px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
  .sticky .p small{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
- .sticky .btn{flex:1;min-height:52px;padding:0 12px}
+ .sticky .btn-buy{flex:1;min-height:52px;padding:0 12px;font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){
  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -346,19 +343,37 @@ body{padding-bottom:var(--tb-h)}
  .ad-tag{font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){.ad-call{animation:none}}
+/* v6 · red glossy buy button (.btn-buy), identical in 06–10 */
+:root{--buy-hi:#FF5A47;--buy-lo:#B80F00;--buy-ink:#6E0900}
+.btn-buy{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:2px solid var(--buy-lo);border-radius:999px;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);box-shadow:inset 0 -3px 0 var(--buy-lo),0 2px 0 var(--buy-ink),0 4px 8px rgba(0,0,0,.28);color:#fff;font:700 16px/1 var(--font);letter-spacing:0;text-transform:none;text-decoration:none;text-shadow:0 1px 0 var(--buy-ink),0 -1px 0 var(--buy-ink),1px 0 0 var(--buy-ink),-1px 0 0 var(--buy-ink);white-space:nowrap;cursor:pointer;transition:filter .15s}
+.btn-buy::before{content:"";position:absolute;z-index:-1;left:5px;right:5px;top:2px;height:46%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.1) 100%);pointer-events:none}
+.btn-buy:hover{filter:brightness(1.12) saturate(1.08)}
+.btn-buy:active{filter:brightness(.92)}
+.btn-buy:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px #fff,inset 0 -3px 0 var(--buy-lo)}
+.btn-buy .bb-ico{flex:0 0 auto;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 0 var(--buy-ink))}
+.btn-buy .bb-ico circle{fill:#fff;stroke:none}
+.btn-buy.sm{gap:6px;padding:0 14px 0 12px;font-size:14px}
+.btn-buy.lg{gap:12px;min-height:56px;padding:0 28px;font-size:19px}
+.btn-buy.lg .bb-ico{width:26px;height:26px}
+.btn-buy.ico{width:44px;padding:0}
+.btn-buy.ico .bb-t{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.btn-buy.done,.btn-buy.done:hover{filter:none;border-color:var(--ink);background:linear-gradient(180deg,#5C5C5C 0%,#1F1F1F 46%,var(--ink) 100%);background-color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink),0 2px 0 var(--ink),0 4px 8px rgba(0,0,0,.28);text-shadow:0 1px 0 var(--ink)}
+.btn-buy b,.btn-buy b.bump{min-width:26px;height:26px;margin-right:-8px;padding:0 5px;border:2px solid var(--buy-ink);border-radius:999px;outline:0;background:#fff;color:var(--ink);font-size:13px;text-shadow:none}
+@media (max-width:900px){.cart.btn-buy{gap:6px;padding:0 14px 0 12px}}
+@media (prefers-reduced-motion:reduce){.btn-buy{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="ticker" aria-label="Novedades">
- <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>El más vendido: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
+ <div aria-hidden="true"><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Best Seller: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span><span>Nuevo: POPEYE Nº950</span><span>BRUTUS Nº1050 en oferta</span><span>Best Seller: Dictionary of Color Combinations</span><span>Enviado desde España</span><span>Pack: 3 imprescindibles para diseñar tipografías</span><span>Nuevas llegadas cada semana</span></div>
 </div>
 <header>
  <div class="wrap bar">
   <a class="logo" href="#">Atlas Novus</a>
   <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#" aria-current="true">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
@@ -396,10 +411,10 @@ body{padding-bottom:var(--tb-h)}
    <p class="price">25,65 €</p>
    <p class="tax">Impuestos incluidos. Envío calculado en el carrito.</p>
    <p class="stock">En stock</p>
-   <button class="btn gloss js-main" id="main-add" type="button" data-name="A Dictionary of Color Combinations · Vol. 1">Añadir al carrito</button>
+   <button class="btn-buy lg js-main" id="main-add" type="button" data-name="A Dictionary of Color Combinations · Vol. 1"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir al carrito</span></button>
    <button class="btn sec" type="button">Comprar con Shop Pay</button>
    <ul class="ship">
-    <li><b>Envío</b><span>Desde Fuengirola, con esquineras y funda. Coste y plazo: <span class="todo">[por confirmar]</span></span></li>
+    <li><b>Envío</b><span>Desde España, con esquineras y funda. Coste y plazo: <span class="todo">[por confirmar]</span></span></li>
     <li><b>Devolución</b><span>14 días desde que lo recibes</span></li>
     <li><b>Fuera de la UE</b><span>Las tasas de aduana las paga quien recibe el pedido</span></li>
    </ul>
@@ -450,7 +465,7 @@ body{padding-bottom:var(--tb-h)}
     <div class="item">
      <span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span>
      <h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span>
-     <button class="add" type="button" data-name="A Dictionary of Color Combinations · Vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito">+</button>
+     <button class="add btn-buy sm" type="button" data-name="A Dictionary of Color Combinations · Vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button>
     </div>
    </div>
   </div>
@@ -468,7 +483,7 @@ body{padding-bottom:var(--tb-h)}
    <div class="win-strip" aria-hidden="true"></div>
    <div class="faq">
     <details open><summary>¿Está en japonés?</summary><p class="todo">[por confirmar]</p></details>
-    <details><summary>¿Cuánto cuesta el envío y cuánto tarda?</summary><p>Lo enviamos desde Fuengirola. Coste y plazo: [por confirmar]. El coste exacto se calcula en el carrito.</p></details>
+    <details><summary>¿Cuánto cuesta el envío y cuánto tarda?</summary><p>Lo enviamos desde España. Coste y plazo: [por confirmar]. El coste exacto se calcula en el carrito.</p></details>
     <details><summary>¿Cómo viene protegido?</summary><p>Con esquineras de cartón y funda protectora.</p></details>
     <details><summary>¿Puedo devolverlo?</summary><p>Sí, tienes 14 días desde que recibes el pedido.</p></details>
     <details><summary>Vivo fuera de la UE, ¿pago aduanas?</summary><p>Sí: los envíos fuera de la UE pueden tener tasas de aduana, y las paga quien recibe el pedido.</p></details>
@@ -506,10 +521,10 @@ body{padding-bottom:var(--tb-h)}
  <section class="wrap block flush" aria-labelledby="h-mas">
   <div class="head"><h2 id="h-mas">También te gustará</h2><a href="#">Ver libros de diseño</a></div>
   <ul class="more">
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s><span class="sr">antes </span>49,40 €</s></span><button class="add" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito">+</button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span><h3><a href="#">Vintage Japanese Canned Food Label Design Book</a></h3><span class="p">28,50 €</span><button class="add" type="button" data-name="Vintage Japanese Canned Food Label Design Book" aria-label="Añadir Vintage Japanese Canned Food Label Design Book al carrito">+</button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s><span class="sr">antes </span>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span><h3><a href="#">Vintage Japanese Canned Food Label Design Book</a></h3><span class="p">28,50 €</span><button class="add btn-buy sm" type="button" data-name="Vintage Japanese Canned Food Label Design Book" aria-label="Añadir Vintage Japanese Canned Food Label Design Book al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
   </ul>
  </section>
 </main>
@@ -530,7 +545,7 @@ body{padding-bottom:var(--tb-h)}
 
 <div class="sticky" id="sticky" role="region" aria-label="Compra rápida">
  <span class="p">25,65 €<small>Dictionary vol. 1</small></span>
- <button class="btn gloss js-main" type="button" data-name="A Dictionary of Color Combinations · Vol. 1">Añadir al carrito</button>
+ <button class="btn-buy lg js-main" type="button" data-name="A Dictionary of Color Combinations · Vol. 1"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir al carrito</span></button>
 </div>
 
 <div class="toast win" id="toast" role="status" aria-live="polite">
@@ -561,7 +576,7 @@ body{padding-bottom:var(--tb-h)}
  /* add to cart: pixel progress, then ✓, cart bump and toast */
  var n=0,busy=false,t,count=document.getElementById('count'),toast=document.getElementById('toast'),
      msg=document.getElementById('toast-msg'),px=document.querySelectorAll('#px i'),mains=document.querySelectorAll('.js-main');
- function label(text,done){mains.forEach(function(m){m.textContent=text;m.classList.toggle('done',done)})}
+ function label(text,done){mains.forEach(function(m){m.querySelector('.bb-t').textContent=text;m.classList.toggle('done',done)})}
  function add(b){
   if(busy)return;busy=true;clearTimeout(t);
   var name=b.dataset.name,main=b.classList.contains('js-main'),i=0;
@@ -573,7 +588,7 @@ body{padding-bottom:var(--tb-h)}
    setTimeout(function(){count.classList.remove('bump')},400);
    msg.textContent='Añadido: '+name;
    if(main)label('✓ Añadido al carrito',true);
-   else{b.textContent='✓';b.classList.add('done');b.setAttribute('aria-label',name+' añadido')}
+   else{b.textContent='✓ Añadido';b.classList.add('done');b.setAttribute('aria-label',name+' añadido')}
    busy=false;
    t=setTimeout(function(){toast.classList.remove('show');label('Añadir al carrito',false)},2800);
   }

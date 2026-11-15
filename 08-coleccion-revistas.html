@@ -116,9 +116,7 @@ nav a[aria-current="page"]{box-shadow:inset 0 -4px 0 var(--red)}
 .item h3 a{text-decoration:none}.item h3 a::after{content:"";position:absolute;inset:0}
 .item .p{font-weight:700;font-variant-numeric:tabular-nums}
 .item .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
-.add{position:relative;align-self:end;justify-self:end;margin:10px;z-index:3;width:48px;height:48px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:700 24px var(--font);cursor:pointer;display:grid;place-items:center;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .15s}
-.add:hover{background:var(--red);transform:scale(1.1) rotate(90deg)}
-.add.done{background:var(--ink);color:var(--paper);transform:scale(1)}
+.add{align-self:end;justify-self:end;margin:10px;z-index:3}
 .item.out .cover{filter:grayscale(1);opacity:.7}
 .item.out h3,.item.out .p{color:var(--ink-2)}
 .item.out .p{font-weight:400}
@@ -168,7 +166,7 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
  .count{order:3;flex:1 1 100%;font-size:16px}
  .wall{grid-template-columns:1fr 1fr;gap:20px 12px}
  .cover .mast{font-size:22px}.cover .no{font-size:40px}.cover .no.txt{font-size:20px}
- .add{width:44px;height:44px}
+ .add{margin:6px}
  .more{margin-top:32px}
  .more .btn{width:100%}
  /* filters become a bottom sheet */
@@ -406,6 +404,24 @@ main[tabindex="-1"]:focus{outline:0}
  .pop-tiles{display:none}
 }
 @media (prefers-reduced-motion:reduce){.pop{transition:none}}
+/* v6 · red glossy buy button (.btn-buy), identical in 06–10 */
+:root{--buy-hi:#FF5A47;--buy-lo:#B80F00;--buy-ink:#6E0900}
+.btn-buy{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:2px solid var(--buy-lo);border-radius:999px;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);box-shadow:inset 0 -3px 0 var(--buy-lo),0 2px 0 var(--buy-ink),0 4px 8px rgba(0,0,0,.28);color:#fff;font:700 16px/1 var(--font);letter-spacing:0;text-transform:none;text-decoration:none;text-shadow:0 1px 0 var(--buy-ink),0 -1px 0 var(--buy-ink),1px 0 0 var(--buy-ink),-1px 0 0 var(--buy-ink);white-space:nowrap;cursor:pointer;transition:filter .15s}
+.btn-buy::before{content:"";position:absolute;z-index:-1;left:5px;right:5px;top:2px;height:46%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.1) 100%);pointer-events:none}
+.btn-buy:hover{filter:brightness(1.12) saturate(1.08)}
+.btn-buy:active{filter:brightness(.92)}
+.btn-buy:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px #fff,inset 0 -3px 0 var(--buy-lo)}
+.btn-buy .bb-ico{flex:0 0 auto;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 0 var(--buy-ink))}
+.btn-buy .bb-ico circle{fill:#fff;stroke:none}
+.btn-buy.sm{gap:6px;padding:0 14px 0 12px;font-size:14px}
+.btn-buy.lg{gap:12px;min-height:56px;padding:0 28px;font-size:19px}
+.btn-buy.lg .bb-ico{width:26px;height:26px}
+.btn-buy.ico{width:44px;padding:0}
+.btn-buy.ico .bb-t{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.btn-buy.done,.btn-buy.done:hover{filter:none;border-color:var(--ink);background:linear-gradient(180deg,#5C5C5C 0%,#1F1F1F 46%,var(--ink) 100%);background-color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink),0 2px 0 var(--ink),0 4px 8px rgba(0,0,0,.28);text-shadow:0 1px 0 var(--ink)}
+.btn-buy b,.btn-buy b.bump{min-width:26px;height:26px;margin-right:-8px;padding:0 5px;border:2px solid var(--buy-ink);border-radius:999px;outline:0;background:#fff;color:var(--ink);font-size:13px;text-shadow:none}
+@media (max-width:900px){.cart.btn-buy{gap:6px;padding:0 14px 0 12px}}
+@media (prefers-reduced-motion:reduce){.btn-buy{transition:none}}
 </style>
 </head>
 <body>
@@ -418,7 +434,7 @@ main[tabindex="-1"]:focus{outline:0}
   <a class="logo" href="#">Atlas Novus</a>
   <nav aria-label="Principal"><ul><li><a href="#" aria-current="page">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart" aria-label="Carrito">Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
@@ -608,13 +624,15 @@ main[tabindex="-1"]:focus{outline:0}
   var p=m.ph;
   return '<img class="photo'+(p[3]?' '+p[3]:'')+'" src="img/'+p[0]+'" alt="Portada de '+m.t+'" loading="lazy" width="'+p[1]+'" height="'+p[2]+'"'+(p[4]?' style="'+p[4]+'"':'')+'>';
  }
+ // v6 buy button content: cart icon + label
+ var BUY='<svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span>';
  function card(m){
   var i=MAGS.indexOf(m),done=added[i];
   var badge=m.out?'<span class="badge b-out">Agotado</span>':m.was?'<span class="badge b-holo">Oferta</span>':'';
   var cover=m.ph?'<span class="cover has-photo">'+photo(m)+badge+'</span>':'<span class="cover'+(DARK[m.c]?' dark':'')+'" style="background:var(--c'+m.c+')">'+badge+'<span class="mast">'+m.m+'</span><span class="no'+(m.txt?' txt':'')+'">'+m.n+'</span><small>foto real</small></span>';
   var price=m.out?'<span class="p">'+eur(m.p)+'</span><a class="notify" href="#">Avísame cuando vuelva<span class="sr"> '+m.t+'</span></a>'
    :'<span class="p">'+eur(m.p)+(m.was?'<s><span class="sr">antes </span>'+eur(m.was)+'</s>':'')+'</span>';
-  var add=m.out?'':'<button class="add'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓':'+')+'</button>';
+  var add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓ Añadido':BUY)+'</button>';
   return '<li class="item'+(m.out?' out':'')+'">'+cover+'<h3><a href="#">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h3>'+price+add+'</li>';
  }
  function chips(){
@@ -701,7 +719,7 @@ main[tabindex="-1"]:focus{outline:0}
   cnt++;count.textContent=cnt;count.classList.remove('bump');void count.offsetWidth;count.classList.add('bump');
   setTimeout(function(){count.classList.remove('bump')},300);
   // the same issue can be on the wall and in its flyer
-  [].forEach.call(document.querySelectorAll('.add[data-i="'+b.dataset.i+'"]'),function(x){x.textContent='✓';x.classList.add('done');x.setAttribute('aria-label',m.t+' añadido')});
+  [].forEach.call(document.querySelectorAll('.add[data-i="'+b.dataset.i+'"]'),function(x){x.textContent='✓ Añadido';x.classList.add('done');x.setAttribute('aria-label',m.t+' añadido')});
   msg.textContent='Añadido: '+m.t;toast.classList.add('show');
   clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2600);
  }
@@ -713,7 +731,7 @@ main[tabindex="-1"]:focus{outline:0}
  function shout(m,k){return m.out?'Agotado':m.en?'En inglés':m.nov===1?'Nuevo':m.was?'Oferta':['Traída de Japón','Edición original','Portada de colección'][k%3]}
  function tile(m,k){
   var i=MAGS.indexOf(m),e=eur(m.p).replace(' €','').split(',');
-  var add=m.out?'':'<button class="add" type="button" data-i="'+i+'" aria-label="Añadir '+m.t+' al carrito">+</button>';
+  var done=added[i],add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓ Añadido':BUY)+'</button>';
   return '<li class="fly-tile'+(m.out?' out':'')+'"><span class="fly-rib">'+shout(m,k)+'</span>'
    +'<div class="fly-pic"><span class="cover has-photo">'+photo(m)+'</span>'+add+'</div>'
    +'<div><h4><a href="#">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h4><p class="fly-line">[texto por redactar]</p>'
