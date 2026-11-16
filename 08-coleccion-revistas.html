@@ -214,8 +214,8 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 /* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
 body{padding-bottom:var(--tb-h)}
 .taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
-.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
-.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--buy-lo)}
 .tb-start:hover{filter:brightness(1.08)}
 .tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
 .tb-buy:hover{background:rgba(255,255,255,.25)}
@@ -431,16 +431,16 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 <header>
  <div class="wrap bar">
-  <a class="logo" href="#">Atlas Novus</a>
-  <nav aria-label="Principal"><ul><li><a href="#" aria-current="page">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <a class="logo" href="06-home-y2k.html">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="08-coleccion-revistas.html" aria-current="page">Revistas</a></li><li><a href="06-home-y2k.html#muro">Libros de diseño</a></li><li><a href="06-home-y2k.html#ghibli">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="06-home-y2k.html#muro">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="09-carrito.html" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
 <main id="main">
  <div class="wrap">
-  <nav class="crumbs" aria-label="Migas de pan"><ol><li><a href="#">Inicio</a></li><li aria-current="page">Revistas japonesas</li></ol></nav>
+  <nav class="crumbs" aria-label="Migas de pan"><ol><li><a href="06-home-y2k.html">Inicio</a></li><li aria-current="page">Revistas japonesas</li></ol></nav>
   <div class="chead">
    <h1><span>Revistas</span> <span>japonesas</span></h1>
    <p>Números originales de POPEYE, BRUTUS, GO OUT y FUDGE, traídos de Japón y enviados desde España. Elige por la portada.</p>
@@ -543,7 +543,7 @@ main[tabindex="-1"]:focus{outline:0}
   </div>
  </section>
 </main>
-<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="10-nosotros-y-ayuda.html#envios">Envíos</a><a href="10-nosotros-y-ayuda.html#devoluciones">Devoluciones</a><a href="10-nosotros-y-ayuda.html#contacto">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
 
 <div class="pop off" id="pop" role="dialog" aria-labelledby="pop-title" data-pop="pack" hidden>
  <button class="pop-x" type="button" data-pop-close aria-label="Cerrar aviso">×</button>
@@ -559,8 +559,8 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 
 <div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
- <a class="tb-start" href="#">Comprar</a>
- <a class="tb-buy" href="#">Best Seller · 25,65 €</a>
+ <a class="tb-start" href="06-home-y2k.html#muro">Comprar</a>
+ <a class="tb-buy" href="07-producto-dictionary.html">Best Seller · 25,65 €</a>
  <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
  <form class="tb-news" id="tb-news" novalidate>
   <label class="tb-label" for="tb-email">Novedades de Japón en tu correo</label>
@@ -573,7 +573,7 @@ main[tabindex="-1"]:focus{outline:0}
 
 <div class="win toast" id="toast" role="status" aria-live="polite">
  <div class="win-bar"><span>Carrito</span><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
- <div class="body"><span id="toast-msg"></span><a href="#">Ver carrito</a></div>
+ <div class="body"><span id="toast-msg"></span><a href="09-carrito.html">Ver carrito</a></div>
 </div>
 <script>
 (function(){
@@ -625,15 +625,15 @@ main[tabindex="-1"]:focus{outline:0}
   return '<img class="photo'+(p[3]?' '+p[3]:'')+'" src="img/'+p[0]+'" alt="Portada de '+m.t+'" loading="lazy" width="'+p[1]+'" height="'+p[2]+'"'+(p[4]?' style="'+p[4]+'"':'')+'>';
  }
  // v6 buy button content: cart icon + label
- var BUY='<svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span>';
+ var BUY='<svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span>';
  function card(m){
   var i=MAGS.indexOf(m),done=added[i];
   var badge=m.out?'<span class="badge b-out">Agotado</span>':m.was?'<span class="badge b-holo">Oferta</span>':'';
   var cover=m.ph?'<span class="cover has-photo">'+photo(m)+badge+'</span>':'<span class="cover'+(DARK[m.c]?' dark':'')+'" style="background:var(--c'+m.c+')">'+badge+'<span class="mast">'+m.m+'</span><span class="no'+(m.txt?' txt':'')+'">'+m.n+'</span><small>foto real</small></span>';
   var price=m.out?'<span class="p">'+eur(m.p)+'</span><a class="notify" href="#">Avísame cuando vuelva<span class="sr"> '+m.t+'</span></a>'
    :'<span class="p">'+eur(m.p)+(m.was?'<s><span class="sr">antes </span>'+eur(m.was)+'</s>':'')+'</span>';
-  var add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓ Añadido':BUY)+'</button>';
-  return '<li class="item'+(m.out?' out':'')+'">'+cover+'<h3><a href="#">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h3>'+price+add+'</li>';
+  var add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' a la cesta')+'">'+(done?'✓ Añadido':BUY)+'</button>';
+  return '<li class="item'+(m.out?' out':'')+'">'+cover+'<h3><a href="08-coleccion-revistas.html">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h3>'+price+add+'</li>';
  }
  function chips(){
   var c=[];
@@ -731,10 +731,10 @@ main[tabindex="-1"]:focus{outline:0}
  function shout(m,k){return m.out?'Agotado':m.en?'En inglés':m.nov===1?'Nuevo':m.was?'Oferta':['Traída de Japón','Edición original','Portada de colección'][k%3]}
  function tile(m,k){
   var i=MAGS.indexOf(m),e=eur(m.p).replace(' €','').split(',');
-  var done=added[i],add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' al carrito')+'">'+(done?'✓ Añadido':BUY)+'</button>';
+  var done=added[i],add=m.out?'':'<button class="add btn-buy sm'+(done?' done':'')+'" type="button" data-i="'+i+'" aria-label="'+(done?m.t+' añadido':'Añadir '+m.t+' a la cesta')+'">'+(done?'✓ Añadido':BUY)+'</button>';
   return '<li class="fly-tile'+(m.out?' out':'')+'"><span class="fly-rib">'+shout(m,k)+'</span>'
    +'<div class="fly-pic"><span class="cover has-photo">'+photo(m)+'</span>'+add+'</div>'
-   +'<div><h4><a href="#">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h4><p class="fly-line">[texto por redactar]</p>'
+   +'<div><h4><a href="08-coleccion-revistas.html">'+m.t+(m.out?'<span class="sr"> (agotado)</span>':'')+'</a></h4><p class="fly-line">[texto por redactar]</p>'
    +(m.out?'<a class="notify" href="#">Avísame cuando vuelva<span class="sr"> '+m.t+'</span></a>':'')+'</div>'
    +'<p class="fly-price"><span class="sr">'+eur(m.p)+'</span><span aria-hidden="true">'+e[0]+'<sup>,'+e[1]+' €</sup></span>'+(m.was?'<s><span class="sr">antes </span>'+eur(m.was)+'</s>':'')+'</p></li>';
  }
@@ -826,6 +826,17 @@ main[tabindex="-1"]:focus{outline:0}
  });
  if(seen())return;
  if(still)open();else setTimeout(open,4000);
+})();
+</script>
+<script>
+(function(){
+ // navigable mockup: a cover takes you where its title link goes
+ var s=document.createElement('style');s.textContent='[data-go] .cover,.item .cover,.fly-tile .cover,.line .cover{cursor:pointer}';document.head.appendChild(s);
+ document.addEventListener('click',function(e){
+  var c=e.target.closest('.cover');if(!c||c.closest('a,button'))return;
+  var box=c.closest('[data-go],.item,.fly-tile,.line'),a=box&&box.querySelector('h3 a,h4 a,.line-name a'),to=box&&(box.dataset.go||(a&&a.getAttribute('href')));
+  if(to&&to!=='#')location.href=to;
+ });
 })();
 </script>
 </body>

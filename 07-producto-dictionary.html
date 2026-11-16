@@ -255,8 +255,8 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 /* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
 body{padding-bottom:var(--tb-h)}
 .taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
-.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
-.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--buy-lo)}
 .tb-start:hover{filter:brightness(1.08)}
 .tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
 .tb-buy:hover{background:rgba(255,255,255,.25)}
@@ -370,16 +370,16 @@ body{padding-bottom:var(--tb-h)}
 </div>
 <header>
  <div class="wrap bar">
-  <a class="logo" href="#">Atlas Novus</a>
-  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#" aria-current="true">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <a class="logo" href="06-home-y2k.html">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="08-coleccion-revistas.html">Revistas</a></li><li><a href="06-home-y2k.html#muro" aria-current="true">Libros de diseño</a></li><li><a href="06-home-y2k.html#ghibli">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="06-home-y2k.html#muro">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="09-carrito.html" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
 <main id="main">
  <nav class="wrap crumbs" aria-label="Migas de pan">
-  <ol><li><a href="#">Inicio</a></li><li><a href="#">Libros de diseño</a></li><li><span aria-current="page">A Dictionary of Color Combinations · Vol. 1</span></li></ol>
+  <ol><li><a href="06-home-y2k.html">Inicio</a></li><li><a href="06-home-y2k.html#muro">Libros de diseño</a></li><li><span aria-current="page">A Dictionary of Color Combinations · Vol. 1</span></li></ol>
  </nav>
 
  <div class="wrap product">
@@ -464,8 +464,8 @@ body{padding-bottom:var(--tb-h)}
     <span class="plus" aria-hidden="true">+</span>
     <div class="item">
      <span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span>
-     <h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span>
-     <button class="add btn-buy sm" type="button" data-name="A Dictionary of Color Combinations · Vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button>
+     <h3><a href="07-producto-dictionary.html">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span>
+     <button class="add btn-buy sm" type="button" data-name="A Dictionary of Color Combinations · Vol. 2" aria-label="Añadir Dictionary vol. 2 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button>
     </div>
    </div>
   </div>
@@ -519,19 +519,19 @@ body{padding-bottom:var(--tb-h)}
  </section>
 
  <section class="wrap block flush" aria-labelledby="h-mas">
-  <div class="head"><h2 id="h-mas">También te gustará</h2><a href="#">Ver libros de diseño</a></div>
+  <div class="head"><h2 id="h-mas">También te gustará</h2><a href="06-home-y2k.html#muro">Ver libros de diseño</a></div>
   <ul class="more">
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s><span class="sr">antes </span>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span><h3><a href="#">Vintage Japanese Canned Food Label Design Book</a></h3><span class="p">28,50 €</span><button class="add btn-buy sm" type="button" data-name="Vintage Japanese Canned Food Label Design Book" aria-label="Añadir Vintage Japanese Canned Food Label Design Book al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="07-producto-dictionary.html">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns · Vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="07-producto-dictionary.html">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s><span class="sr">antes </span>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker">Oferta</span></span><h3><a href="08-coleccion-revistas.html">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s><span class="sr">antes </span>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span><h3><a href="07-producto-dictionary.html">Vintage Japanese Canned Food Label Design Book</a></h3><span class="p">28,50 €</span><button class="add btn-buy sm" type="button" data-name="Vintage Japanese Canned Food Label Design Book" aria-label="Añadir Vintage Japanese Canned Food Label Design Book a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
   </ul>
  </section>
 </main>
-<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="10-nosotros-y-ayuda.html#envios">Envíos</a><a href="10-nosotros-y-ayuda.html#devoluciones">Devoluciones</a><a href="10-nosotros-y-ayuda.html#contacto">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
 
 <div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
- <a class="tb-start" href="#">Comprar</a>
+ <a class="tb-start" href="06-home-y2k.html#muro">Comprar</a>
  <button class="tb-buy" type="button" data-click="#main-add">Añadir al carrito · 25,65 €</button>
  <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
  <form class="tb-news" id="tb-news" novalidate>
@@ -554,7 +554,7 @@ body{padding-bottom:var(--tb-h)}
  <div class="toast-body">
   <p id="toast-msg"></p>
   <span class="px" id="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-  <a href="#">Ver carrito</a>
+  <a href="09-carrito.html">Ver carrito</a>
  </div>
 </div>
 <script>
@@ -621,6 +621,17 @@ body{padding-bottom:var(--tb-h)}
 <script>
 (function(){
  document.querySelectorAll('.ad-post [data-click]').forEach(function(b){b.addEventListener('click',function(){var t=document.querySelector(b.dataset.click);if(t)t.click()})});
+})();
+</script>
+<script>
+(function(){
+ // navigable mockup: a cover takes you where its title link goes
+ var s=document.createElement('style');s.textContent='[data-go] .cover,.item .cover,.fly-tile .cover,.line .cover{cursor:pointer}';document.head.appendChild(s);
+ document.addEventListener('click',function(e){
+  var c=e.target.closest('.cover');if(!c||c.closest('a,button'))return;
+  var box=c.closest('[data-go],.item,.fly-tile,.line'),a=box&&box.querySelector('h3 a,h4 a,.line-name a'),to=box&&(box.dataset.go||(a&&a.getAttribute('href')));
+  if(to&&to!=='#')location.href=to;
+ });
 })();
 </script>
 </body>

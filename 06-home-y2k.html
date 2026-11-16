@@ -117,14 +117,15 @@ section.block,div.block{padding:56px 0}
 .item.big .cover .mast{font-size:48px}
 .item.big .cover.dict .mast{font-size:30px}
 /* big drop band */
-.drop{background:var(--ink);color:var(--paper);padding:56px 0;overflow:hidden}
+/* Ghibli band on the Atlas Novus logo pink (#FFC9DE, design/logo-atlas-novus), Mario 2026-11-15 */
+.drop{background:#FFC9DE;color:var(--ink);padding:56px 0;overflow:hidden}
 .drop .wrap{display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
 .drop h2{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;letter-spacing:-.03em}
 .drop h2 span{display:block;color:var(--red)}
 .drop p{margin:16px 0 24px;max-width:380px}
 .drop .btn{background-color:var(--red);color:var(--ink);border-color:var(--red)}
-.drop .btn:hover{background-color:var(--paper);border-color:var(--paper)}
-.drop :focus-visible{outline-color:var(--paper)}
+.drop .btn:hover{background-color:var(--paper);border-color:var(--ink)}
+.drop :focus-visible{outline-color:var(--ink)}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:220px;gap:16px;overflow-x:auto;list-style:none;scroll-snap-type:x mandatory;padding-bottom:12px}
 .rail li{scroll-snap-align:start}
 .rail .cover{border-color:var(--paper)}
@@ -234,8 +235,8 @@ footer strong{display:inline-flex;align-items:center}
 /* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
 body{padding-bottom:var(--tb-h)}
 .taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
-.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
-.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--buy-lo)}
 .tb-start:hover{filter:brightness(1.08)}
 .tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
 .tb-buy:hover{background:rgba(255,255,255,.25)}
@@ -260,7 +261,7 @@ body{padding-bottom:var(--tb-h)}
  .tb-news input{flex:1 1 160px;width:auto}
  .tb-news .tb-msg{flex:1 1 100%}
 }
-/* v3 · 06: pack «Biblioteca creativa» with a CSS wire basket (reference 4-barra-packs) */
+/* v3 · 06: pack «Biblioteca creativa» (reference 4-barra-packs); v6: real wire basket photo (img/cesta-metal.webp, Magnific) layered over the covers */
 .win-bar span.xp-ctl[aria-hidden]{letter-spacing:0}
 .pack{background:var(--surface);padding:64px 0;overflow:hidden}
 .pack .wrap{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
@@ -274,22 +275,20 @@ body{padding-bottom:var(--tb-h)}
 .pack-list .p s{font-weight:400;color:var(--ink-2);margin-left:6px}
 .pack-list .p.out{font-size:12px;padding:4px 8px;background:var(--paper);border:1px solid var(--ink-2);color:var(--ink-2)}
 .pack-price{margin:16px 0 24px;font-size:18px}
-.basket{--wire:#8C8C88;position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:10/9}
-.basket::before{content:"";position:absolute;left:13%;right:13%;top:34%;height:44%;border:3px solid #B4B4AF;border-radius:6px;background:repeating-linear-gradient(90deg,transparent 0 16px,#B4B4AF 16px 17px),repeating-linear-gradient(0deg,transparent 0 30px,#B4B4AF 30px 31px)}
-.bk-handle{position:absolute;left:22%;right:22%;top:10%;height:26%;border:9px solid #9DB0CC;border-bottom:0;border-radius:140px 140px 0 0}
-.bk-handle+.bk-handle{left:17%;right:17%;top:3%;height:36%}
-.basket .cover{position:absolute;display:block;width:32%;top:22%;left:34%;z-index:1;box-shadow:4px 4px 0 rgba(0,0,0,.25)}
-.basket .cover:nth-of-type(3){left:10%;top:27%;transform:rotate(-13deg)}
-.basket .cover:nth-of-type(4){z-index:2}
-.basket .cover:nth-of-type(5){left:58%;top:28%;transform:rotate(11deg)}
-.bk-wire{position:absolute;left:4%;right:4%;top:46%;bottom:2%;z-index:3;border:5px solid var(--wire);border-top-width:8px;border-radius:8px 8px 40px 40px;background:repeating-linear-gradient(90deg,transparent 0 22px,var(--wire) 22px 24px),repeating-linear-gradient(0deg,transparent 0 46px,var(--wire) 46px 48px);transform:perspective(700px) rotateX(-16deg);transform-origin:50% 100%}
+.basket{position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:900/781}
+.bk-img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;user-select:none}
+.bk-back{z-index:0;filter:drop-shadow(0 18px 18px rgba(0,0,0,.18))}
+/* front walls and the near handle leg, drawn over the books so they sit inside the basket */
+.bk-front{z-index:3;clip-path:polygon(0 43.5%,33.3% 63%,100% 40.7%,100% 100%,0 100%)}
+.bk-leg{z-index:3;clip-path:polygon(60.9% 21.8%,71.1% 21.8%,71.1% 25.6%,66.7% 53.8%,60% 53.8%)}
+.basket .cover{position:absolute;display:block;width:30%;top:20%;left:14%;z-index:1;transform:rotate(-12deg);box-shadow:0 6px 14px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.3)}
+.basket .cover:nth-of-type(2){left:33%;top:13%;transform:rotate(-2deg);z-index:2}
+.basket .cover:nth-of-type(3){left:50%;top:19%;transform:rotate(9deg)}
 @media (max-width:900px){
  .pack{padding:40px 0}
  .pack .wrap{grid-template-columns:1fr;gap:32px}
  .pack h2{font-size:36px}
  .pack .btn{width:100%}
- .bk-handle{border-width:6px}
- .bk-wire{border-width:3px;border-top-width:5px;border-radius:6px 6px 24px 24px;background:repeating-linear-gradient(90deg,transparent 0 15px,var(--wire) 15px 16px),repeating-linear-gradient(0deg,transparent 0 30px,var(--wire) 30px 31px)}
 }
 /* v4 · ad posters (2026-11-14): Japanese 2000s TV-shopping ad inside a cheap blog post. Replaces the v3 poster spaces */
 :root{--yellow:#FFD400;--ad-shade:#001A66}
@@ -454,10 +453,10 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 <header>
  <div class="wrap bar">
-  <a class="logo" href="#">Atlas Novus</a>
-  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <a class="logo" href="06-home-y2k.html">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="08-coleccion-revistas.html">Revistas</a></li><li><a href="#muro">Libros de diseño</a></li><li><a href="#ghibli">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#muro">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
+  <a href="09-carrito.html" class="cart btn-buy" aria-label="Carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count" aria-live="polite">0</b></a>
  </div>
 </header>
 
@@ -466,24 +465,24 @@ main[tabindex="-1"]:focus{outline:0}
   <div>
    <h1 id="h1"><span>Diseño japonés que se compra por la portada</span></h1>
    <p class="lead">Revistas y libros de diseño en edición original, traídos de Japón y enviados desde España.</p>
-   <div class="ctas"><a class="btn" href="#muro">Ver las portadas</a><a class="btn best" href="#">Best Seller · 25,65 €</a></div>
+   <div class="ctas"><a class="btn" href="#muro">Ver las portadas</a><a class="btn best" href="07-producto-dictionary.html">Best Seller · 25,65 €</a></div>
    <p class="proof"><strong>5,0</strong> de media en 238 valoraciones reales en Vinted y Etsy</p>
   </div>
   <div class="fan" role="group" aria-label="Destacados">
-   <a href="#" aria-label="POPEYE Hello, Tokyo!, en oferta, 33,25 €"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span></a>
-   <a href="#" aria-label="A Dictionary of Color Combinations vol. 1, Best Seller, 25,65 €"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span></a>
-   <a href="#" aria-label="BRUTUS Nº1050, en oferta, 28,03 €"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span></a>
+   <a href="08-coleccion-revistas.html" aria-label="POPEYE Hello, Tokyo!, en oferta, 33,25 €"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span></a>
+   <a href="07-producto-dictionary.html" aria-label="A Dictionary of Color Combinations vol. 1, Best Seller, 25,65 €"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span></a>
+   <a href="08-coleccion-revistas.html" aria-label="BRUTUS Nº1050, en oferta, 28,03 €"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span></a>
   </div>
  </section>
 
  <nav class="wrap mastheads" aria-labelledby="h-cab">
   <h2 id="h-cab">Revistas por cabecera</h2>
   <ul>
-   <li><a href="#"><strong>POPEYE</strong><span class="sticker">6 números</span></a></li>
-   <li><a href="#"><strong>BRUTUS</strong><span class="sticker">3 números</span></a></li>
-   <li><a href="#"><strong>GO OUT</strong><span class="sticker">2 números</span></a></li>
-   <li><a href="#"><strong>FUDGE</strong><span class="sticker">6 números</span></a></li>
-   <li><a href="#"><strong>Especiales</strong><span class="sticker">4 números</span></a></li>
+   <li><a href="08-coleccion-revistas.html"><strong>POPEYE</strong><span class="sticker">6 números</span></a></li>
+   <li><a href="08-coleccion-revistas.html"><strong>BRUTUS</strong><span class="sticker">3 números</span></a></li>
+   <li><a href="08-coleccion-revistas.html"><strong>GO OUT</strong><span class="sticker">2 números</span></a></li>
+   <li><a href="08-coleccion-revistas.html"><strong>FUDGE</strong><span class="sticker">6 números</span></a></li>
+   <li><a href="08-coleccion-revistas.html"><strong>Especiales</strong><span class="sticker">4 números</span></a></li>
   </ul>
  </nav>
 
@@ -494,17 +493,17 @@ main[tabindex="-1"]:focus{outline:0}
   </div>
   <ul class="wall">
    <li class="item big"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combination-color-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 1" loading="lazy" width="900" height="584" style="width:335.8%;left:-111.6%;top:-31.3%"><span class="sticker">Best Seller</span></span>
-    <h3><a href="#">A Dictionary of Color Combinations · Vol. 1</a></h3><span class="p">25,65 €</span>
-    <button class="add btn-buy sm" type="button" data-name="Dictionary vol. 1" aria-label="Añadir Dictionary vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png" alt="Portada de POPEYE Nº950" loading="lazy" width="900" height="584" style="width:354.1%;left:-120.2%;top:-35.9%"><span class="sticker new" lang="en">NEW</span></span><h3><a href="#">POPEYE Nº950</a></h3><span class="p">34,20 €</span><button class="add btn-buy sm" type="button" data-name="POPEYE Nº950" aria-label="Añadir POPEYE Nº950 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span><h3><a href="#">BRUTUS Nº1050</a></h3><span class="p">28,03 €<s>33,20 €</s></span><button class="add btn-buy sm" type="button" data-name="BRUTUS Nº1050" aria-label="Añadir BRUTUS Nº1050 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span><h3><a href="#">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png" alt="Portada de GO OUT 201" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3><a href="#">GO OUT 201</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="GO OUT 201" aria-label="Añadir GO OUT 201 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="#">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo" src="img/fudge-febrero-2026-vol-271-color-balance-1.jpg" alt="Portada de FUDGE 271" loading="lazy" width="900" height="1152"></span><h3><a href="#">FUDGE 271</a></h3><span class="p">28,03 €</span><button class="add btn-buy sm" type="button" data-name="FUDGE 271" aria-label="Añadir FUDGE 271 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span><h3><a href="#">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span><button class="add btn-buy sm" type="button" data-name="Dictionary vol. 2" aria-label="Añadir Dictionary vol. 2 al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="#">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
-   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"></span><h3><a href="#">Old-Style Alphabet Lettering of Japan</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="Old-Style Alphabet Lettering of Japan" aria-label="Añadir Old-Style Alphabet Lettering of Japan al carrito"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span></button></li>
+    <h3><a href="07-producto-dictionary.html">A Dictionary of Color Combinations · Vol. 1</a></h3><span class="p">25,65 €</span>
+    <button class="add btn-buy sm" type="button" data-name="Dictionary vol. 1" aria-label="Añadir Dictionary vol. 1 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-junio-2026-n950-made-in-usa-catalog-50-aniversario-1.png" alt="Portada de POPEYE Nº950" loading="lazy" width="900" height="584" style="width:354.1%;left:-120.2%;top:-35.9%"><span class="sticker new" lang="en">NEW</span></span><h3><a href="08-coleccion-revistas.html">POPEYE Nº950</a></h3><span class="p">34,20 €</span><button class="add btn-buy sm" type="button" data-name="POPEYE Nº950" aria-label="Añadir POPEYE Nº950 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/brutus-numero-del-1-de-abril-de-2026-n--1050-bien-hecho-obr-1.png" alt="Portada de BRUTUS Nº1050" loading="lazy" width="900" height="584" style="width:322.8%;left:-110.9%;top:-28.1%"><span class="sticker">Oferta</span></span><h3><a href="08-coleccion-revistas.html">BRUTUS Nº1050</a></h3><span class="p">28,03 €<s>33,20 €</s></span><button class="add btn-buy sm" type="button" data-name="BRUTUS Nº1050" aria-label="Añadir BRUTUS Nº1050 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/popeye-special-edition-hello-tokyo-mook-guia-de-tokio-versio-1.png" alt="Portada de POPEYE Hello, Tokyo!" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.3%;top:-26.4%"><span class="sticker l">Oferta</span></span><h3><a href="08-coleccion-revistas.html">POPEYE Hello, Tokyo!</a></h3><span class="p">33,25 €<s>49,40 €</s></span><button class="add btn-buy sm" type="button" data-name="POPEYE Hello, Tokyo!" aria-label="Añadir POPEYE Hello, Tokyo! a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/go-out-julio-2026-vol-201-t-shirt-shorts-sandal-summer-1.png" alt="Portada de GO OUT 201" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3><a href="08-coleccion-revistas.html">GO OUT 201</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="GO OUT 201" aria-label="Añadir GO OUT 201 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-1-traditional-japanese-patterns-vol-1-seigensha-1.png" alt="Portada de Traditional Japanese Patterns · Vol. 1" loading="lazy" width="900" height="584" style="width:368.3%;left:-122.3%;top:-34.6%"></span><h3><a href="07-producto-dictionary.html">Traditional Japanese Patterns · Vol. 1</a></h3><span class="p">25,65 €</span><button class="add btn-buy sm" type="button" data-name="Traditional Japanese Patterns vol. 1" aria-label="Añadir Traditional Japanese Patterns vol. 1 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo" src="img/fudge-febrero-2026-vol-271-color-balance-1.jpg" alt="Portada de FUDGE 271" loading="lazy" width="900" height="1152"></span><h3><a href="08-coleccion-revistas.html">FUDGE 271</a></h3><span class="p">28,03 €</span><button class="add btn-buy sm" type="button" data-name="FUDGE 271" aria-label="Añadir FUDGE 271 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/a-dictionary-of-combinations-color-vol-2-1.png" alt="Portada de A Dictionary of Color Combinations · Vol. 2" loading="lazy" width="900" height="584" style="width:338.3%;left:-112.4%;top:-32.0%"></span><h3><a href="07-producto-dictionary.html">A Dictionary of Color Combinations · Vol. 2</a></h3><span class="p">26,60 €</span><button class="add btn-buy sm" type="button" data-name="Dictionary vol. 2" aria-label="Añadir Dictionary vol. 2 a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"><span class="sticker">Oferta</span></span><h3><a href="07-producto-dictionary.html">Showa Modern: Diseño Publicitario</a></h3><span class="p">25,65 €<s>34,20 €</s></span><button class="add btn-buy sm" type="button" data-name="Showa Modern: Diseño Publicitario" aria-label="Añadir Showa Modern: Diseño Publicitario a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
+   <li class="item"><span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"></span><h3><a href="07-producto-dictionary.html">Old-Style Alphabet Lettering of Japan</a></h3><span class="p">32,30 €</span><button class="add btn-buy sm" type="button" data-name="Old-Style Alphabet Lettering of Japan" aria-label="Añadir Old-Style Alphabet Lettering of Japan a la cesta"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span></button></li>
   </ul>
  </section>
 
@@ -515,19 +514,20 @@ main[tabindex="-1"]:focus{outline:0}
     <h2 id="h-pack">3 imprescindibles para diseñar tipografías</h2>
     <p class="copy">Tres libros de diseño japonés para tener a mano cuando dibujas letras: rotulación, publicidad y etiquetas.</p>
     <ul class="pack-list">
-     <li><a href="#">Old-Style Alphabet Lettering of Japan</a><span class="p">32,30 €</span></li>
-     <li><a href="#">Showa Modern: Diseño Publicitario</a><span class="p">25,65 €<s>34,20 €</s></span></li>
-     <li><a href="#">Vintage Japanese Canned Food Label Design Book</a><span class="p">28,50 €</span></li>
+     <li><a href="07-producto-dictionary.html">Old-Style Alphabet Lettering of Japan</a><span class="p">32,30 €</span></li>
+     <li><a href="07-producto-dictionary.html">Showa Modern: Diseño Publicitario</a><span class="p">25,65 €<s>34,20 €</s></span></li>
+     <li><a href="07-producto-dictionary.html">Vintage Japanese Canned Food Label Design Book</a><span class="p">28,50 €</span></li>
     </ul>
     <p class="pack-price">Precio del pack: <strong>[por confirmar]</strong></p>
-    <a class="btn" href="#">Ver el pack</a>
+    <a class="btn" href="07-producto-dictionary.html">Ver el pack</a>
    </div>
    <div class="basket">
-    <span class="bk-handle" aria-hidden="true"></span><span class="bk-handle" aria-hidden="true"></span>
+    <img class="bk-img bk-back" src="img/cesta-metal.webp" alt="" width="900" height="781" loading="lazy">
     <span class="cover has-photo"><img class="photo mock" src="img/-old-style-alphabet-lettering-of-japan-reedicion-1.png" alt="Portada de Old-Style Alphabet Lettering of Japan" loading="lazy" width="900" height="584" style="width:326.2%;left:-112.4%;top:-29.0%"></span>
     <span class="cover has-photo"><img class="photo mock" src="img/showa-modern-diseno-publicitario-japones-1920s-30s-seigensha-1.png" alt="Portada de Showa Modern: Diseño Publicitario" loading="lazy" width="900" height="584" style="width:331.0%;left:-114.8%;top:-30.0%"></span>
     <span class="cover has-photo"><img class="photo mock" src="img/vintage-japanese-canned-food-label-design-book-retro-graphic-1.png" alt="Portada de Vintage Japanese Canned Food Label Design Book" loading="lazy" width="900" height="584" style="width:335.8%;left:-117.5%;top:-31.6%"></span>
-    <span class="bk-wire" aria-hidden="true"></span>
+    <img class="bk-img bk-front" src="img/cesta-metal.webp" alt="" width="900" height="781" loading="lazy">
+    <img class="bk-img bk-leg" src="img/cesta-metal.webp" alt="" width="900" height="781" loading="lazy">
    </div>
   </div>
  </section>
@@ -577,7 +577,7 @@ main[tabindex="-1"]:focus{outline:0}
   </div>
  </section>
 
- <section class="drop" aria-labelledby="h-gh">
+ <section class="drop" id="ghibli" aria-labelledby="h-gh">
   <div class="wrap">
    <div>
     <h2 id="h-gh">Studio Ghibli <span>en edición japonesa</span></h2>
@@ -585,11 +585,11 @@ main[tabindex="-1"]:focus{outline:0}
     <a class="btn" href="#">Ver los 7 libros</a>
    </div>
    <ul class="rail">
-    <li><span class="cover has-photo"><img class="photo mock" src="img/-mi-vecino-totoro-ehon-tokuma-n--4-edicion-japonesa-1.png" alt="Portada de Mi vecino Totoro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3>Mi vecino Totoro</h3><span class="p">29,93 €</span></li>
-    <li><span class="cover has-photo"><img class="photo mock" src="img/-el-viaje-de-chihiro-ehon-tokuma-n--24-japones-1.png" alt="Portada de El viaje de Chihiro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El viaje de Chihiro</h3><span class="p">29,93 €</span></li>
-    <li><span class="cover has-photo"><img class="photo mock" src="img/-el-castillo-ambulante-de-howl-ehon-tokuma-n--28-jap-1.png" alt="Portada de El castillo ambulante" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El castillo ambulante</h3><span class="p">29,93 €</span></li>
-    <li><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-1-ehon-tokuma-n--16-japo-1.png" alt="Portada de La princesa Mononoke · Parte 1" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>La princesa Mononoke · Parte 1</h3><span class="p">29,93 €</span></li>
-    <li><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-2-ehon-tokuma-n--17-japo-1.png" alt="Portada de La princesa Mononoke · Parte 2" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.4%;top:-26.4%"></span><h3>La princesa Mononoke · Parte 2</h3><span class="p">29,93 €</span></li>
+    <li data-go="07-producto-dictionary.html"><span class="cover has-photo"><img class="photo mock" src="img/-mi-vecino-totoro-ehon-tokuma-n--4-edicion-japonesa-1.png" alt="Portada de Mi vecino Totoro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.4%;top:-26.5%"></span><h3>Mi vecino Totoro</h3><span class="p">29,93 €</span></li>
+    <li data-go="07-producto-dictionary.html"><span class="cover has-photo"><img class="photo mock" src="img/-el-viaje-de-chihiro-ehon-tokuma-n--24-japones-1.png" alt="Portada de El viaje de Chihiro" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El viaje de Chihiro</h3><span class="p">29,93 €</span></li>
+    <li data-go="07-producto-dictionary.html"><span class="cover has-photo"><img class="photo mock" src="img/-el-castillo-ambulante-de-howl-ehon-tokuma-n--28-jap-1.png" alt="Portada de El castillo ambulante" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>El castillo ambulante</h3><span class="p">29,93 €</span></li>
+    <li data-go="07-producto-dictionary.html"><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-1-ehon-tokuma-n--16-japo-1.png" alt="Portada de La princesa Mononoke · Parte 1" loading="lazy" width="900" height="584" style="width:315.5%;left:-107.2%;top:-26.5%"></span><h3>La princesa Mononoke · Parte 1</h3><span class="p">29,93 €</span></li>
+    <li data-go="07-producto-dictionary.html"><span class="cover has-photo"><img class="photo mock" src="img/--la-princesa-mononoke-parte-2-ehon-tokuma-n--17-japo-1.png" alt="Portada de La princesa Mononoke · Parte 2" loading="lazy" width="900" height="584" style="width:313.9%;left:-106.4%;top:-26.4%"></span><h3>La princesa Mononoke · Parte 2</h3><span class="p">29,93 €</span></li>
    </ul>
   </div>
  </section>
@@ -644,7 +644,7 @@ main[tabindex="-1"]:focus{outline:0}
   </div>
  </div>
 </main>
-<footer class="wrap"><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+<footer class="wrap"><strong>Atlas Novus</strong><a href="10-nosotros-y-ayuda.html#envios">Envíos</a><a href="10-nosotros-y-ayuda.html#devoluciones">Devoluciones</a><a href="10-nosotros-y-ayuda.html#contacto">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
 
 <div class="pop off" id="pop" role="dialog" aria-labelledby="pop-title" data-pop="email" hidden>
  <button class="pop-x" type="button" data-pop-close aria-label="Cerrar aviso">×</button>
@@ -663,8 +663,8 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 
 <div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
- <a class="tb-start" href="#">Comprar</a>
- <a class="tb-buy" href="#">Best Seller · 25,65 €</a>
+ <a class="tb-start" href="#muro">Comprar</a>
+ <a class="tb-buy" href="07-producto-dictionary.html">Best Seller · 25,65 €</a>
  <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
  <form class="tb-news" id="tb-news" novalidate>
   <label class="tb-label" for="tb-email">Novedades de Japón en tu correo</label>
@@ -679,7 +679,7 @@ main[tabindex="-1"]:focus{outline:0}
  <div class="win-bar"><span id="toast-title">Añadiendo al carrito</span><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
  <div class="win-body">
   <span class="name" id="toast-name" aria-hidden="true"></span>
-  <a class="btn sm" href="#">Ver carrito</a>
+  <a class="btn sm" href="09-carrito.html">Ver carrito</a>
   <div class="px" id="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
  </div>
  <p class="sr" id="toast-msg" role="status" aria-live="polite"></p>
@@ -771,6 +771,17 @@ main[tabindex="-1"]:focus{outline:0}
  });
  if(seen())return;
  if(still)open();else setTimeout(open,4000);
+})();
+</script>
+<script>
+(function(){
+ // navigable mockup: a cover takes you where its title link goes
+ var s=document.createElement('style');s.textContent='[data-go] .cover,.item .cover,.fly-tile .cover,.line .cover{cursor:pointer}';document.head.appendChild(s);
+ document.addEventListener('click',function(e){
+  var c=e.target.closest('.cover');if(!c||c.closest('a,button'))return;
+  var box=c.closest('[data-go],.item,.fly-tile,.line'),a=box&&box.querySelector('h3 a,h4 a,.line-name a'),to=box&&(box.dataset.go||(a&&a.getAttribute('href')));
+  if(to&&to!=='#')location.href=to;
+ });
 })();
 </script>
 </body>

@@ -230,8 +230,8 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 /* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
 body{padding-bottom:var(--tb-h)}
 .taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
-.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
-.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--buy-lo)}
 .tb-start:hover{filter:brightness(1.08)}
 .tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
 .tb-buy:hover{background:rgba(255,255,255,.25)}
@@ -395,10 +395,10 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 <header>
  <div class="wrap bar">
-  <a class="logo" href="#">Atlas Novus</a>
-  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ayuda">Ayuda</a></li></ul></nav>
+  <a class="logo" href="06-home-y2k.html">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="08-coleccion-revistas.html">Revistas</a></li><li><a href="06-home-y2k.html#muro">Libros de diseño</a></li><li><a href="06-home-y2k.html#ghibli">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="06-home-y2k.html#muro">Ofertas</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ayuda">Ayuda</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
-  <a href="#" class="cart btn-buy" aria-label="Carrito, 0 artículos"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b>0</b></a>
+  <a href="09-carrito.html" class="cart btn-buy" aria-label="Carrito, 0 artículos"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b>0</b></a>
  </div>
 </header>
 
@@ -417,7 +417,7 @@ main[tabindex="-1"]:focus{outline:0}
     <p class="story">Empezamos en Vinted. Hoy ampliamos horizontes.</p>
     <p class="body">Atlas Novus es una tienda de revistas japonesas, libros de diseño y libros ilustrados de Studio Ghibli. También tenemos pósters y objetos.</p>
     <p class="from">Preparamos y enviamos cada pedido desde España</p>
-    <div class="ctas"><a class="btn" href="#">Ver las portadas</a><a class="btn sec" href="#ayuda">Envíos y devoluciones</a></div>
+    <div class="ctas"><a class="btn" href="06-home-y2k.html#muro">Ver las portadas</a><a class="btn sec" href="#ayuda">Envíos y devoluciones</a></div>
    </div>
    <div>
     <ul class="collage" aria-label="Algunos títulos de la tienda">
@@ -439,11 +439,11 @@ main[tabindex="-1"]:focus{outline:0}
      <p>Todo sale de España, con esquineras de cartón y funda protectora.</p>
     </div>
     <ul class="sell">
-     <li><a href="#">Revistas japonesas <span>POPEYE, BRUTUS, GO OUT, FUDGE</span></a></li>
-     <li><a href="#">Libros de diseño <span>A Dictionary of Color Combinations</span></a></li>
-     <li><a href="#">Libros ilustrados de Studio Ghibli <span>Totoro, Chihiro, Mononoke, Howl</span></a></li>
+     <li><a href="08-coleccion-revistas.html">Revistas japonesas <span>POPEYE, BRUTUS, GO OUT, FUDGE</span></a></li>
+     <li><a href="06-home-y2k.html#muro">Libros de diseño <span>A Dictionary of Color Combinations</span></a></li>
+     <li><a href="06-home-y2k.html#ghibli">Libros ilustrados de Studio Ghibli <span>Totoro, Chihiro, Mononoke, Howl</span></a></li>
      <li><a href="#">Pósters</a></li>
-     <li><a href="#">Objetos</a></li>
+     <li><a href="06-home-y2k.html#objetos">Objetos</a></li>
     </ul>
    </div>
   </section>
@@ -620,8 +620,8 @@ main[tabindex="-1"]:focus{outline:0}
 </div>
 
 <div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
- <a class="tb-start" href="#">Comprar</a>
- <a class="tb-buy" href="#">Ver las portadas</a>
+ <a class="tb-start" href="06-home-y2k.html#muro">Comprar</a>
+ <a class="tb-buy" href="06-home-y2k.html#muro">Ver las portadas</a>
  <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
  <form class="tb-news" id="tb-news" novalidate>
   <label class="tb-label" for="tb-email">Novedades de Japón en tu correo</label>

@@ -273,8 +273,8 @@ footer a{min-height:44px;display:inline-flex;align-items:center}
 /* Always-on CTA: Y2K taskbar with buy + email (Mariam: "el CTA debe estar de manera continua") */
 body{padding-bottom:var(--tb-h)}
 .taskbar{position:fixed;left:0;right:0;bottom:0;z-index:35;height:var(--tb-h);display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:linear-gradient(180deg,#5C9BFF 0%,#0047FF 12%,#0040E8 88%,#0033B8 100%);border-top:1px solid #9CC3FF;color:#fff;font:700 14px var(--font)}
-.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,#7BD36A 0%,#3C9E2E 45%,#2E8524 100%);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
-.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px #fff}
+.tb-start{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 22px 0 14px;border-radius:0 18px 18px 0;background:linear-gradient(180deg,var(--buy-hi) 0%,var(--red) 46%,#D41400 100%);background-color:var(--red);color:#fff;text-decoration:none;font:italic 900 18px/1 var(--font);text-shadow:1px 1px 0 rgba(0,0,0,.4);box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+.tb-start::before{content:"";width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--buy-lo)}
 .tb-start:hover{filter:brightness(1.08)}
 .tb-buy{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;border:1px solid #9CC3FF;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;white-space:nowrap;cursor:pointer;font:700 14px var(--font)}
 .tb-buy:hover{background:rgba(255,255,255,.25)}
@@ -377,6 +377,11 @@ body{padding-bottom:var(--tb-h)}
 .btn-buy.ico{width:44px;padding:0}
 .btn-buy.ico .bb-t{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 .btn-buy.done,.btn-buy.done:hover{filter:none;border-color:var(--ink);background:linear-gradient(180deg,#5C5C5C 0%,#1F1F1F 46%,var(--ink) 100%);background-color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink),0 2px 0 var(--ink),0 4px 8px rgba(0,0,0,.28);text-shadow:0 1px 0 var(--ink)}
+/* checkout button in the cart: yellow-orange gloss (Mario, 2026-11-15) */
+.btn-buy.checkout{border-color:#B85C00;background:linear-gradient(180deg,#FFE27A 0%,#FFB300 46%,#F59300 100%);background-color:#FFB300;box-shadow:inset 0 -3px 0 #D97800,0 2px 0 #8A4500,0 4px 8px rgba(0,0,0,.28);color:#1A0E00;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.btn-buy.checkout .bb-ico{stroke:#1A0E00;filter:none}
+.btn-buy.checkout .bb-ico circle{fill:#1A0E00}
+.btn-buy.checkout:focus-visible{box-shadow:0 0 0 3px #fff,inset 0 -3px 0 #D97800}
 .btn-buy b,.btn-buy b.bump{min-width:26px;height:26px;margin-right:-8px;padding:0 5px;border:2px solid var(--buy-ink);border-radius:999px;outline:0;background:#fff;color:var(--ink);font-size:13px;text-shadow:none}
 @media (max-width:900px){.cart.btn-buy{gap:6px;padding:0 14px 0 12px}}
 @media (prefers-reduced-motion:reduce){.btn-buy{transition:none}}
@@ -401,8 +406,8 @@ body{padding-bottom:var(--tb-h)}
 </div>
 <header data-bg>
  <div class="wrap bar">
-  <a class="logo" href="#">Atlas Novus</a>
-  <nav aria-label="Principal"><ul><li><a href="#">Revistas</a></li><li><a href="#">Libros de diseño</a></li><li><a href="#">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="#">Ofertas</a></li></ul></nav>
+  <a class="logo" href="06-home-y2k.html">Atlas Novus</a>
+  <nav aria-label="Principal"><ul><li><a href="08-coleccion-revistas.html">Revistas</a></li><li><a href="06-home-y2k.html#muro">Libros de diseño</a></li><li><a href="06-home-y2k.html#ghibli">Studio Ghibli</a></li><li><a href="#">Pósters</a></li><li><a href="06-home-y2k.html#muro">Ofertas</a></li></ul></nav>
   <span class="menu-note">Menú móvil: se mantiene el actual de la web</span>
   <button type="button" class="cart btn-buy" id="cart-btn" data-act="open" aria-haspopup="dialog" aria-expanded="false"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>Carrito <b id="count">2</b><span class="sr"> artículos. Abrir carrito</span></button>
  </div>
@@ -415,13 +420,13 @@ body{padding-bottom:var(--tb-h)}
    <div>
     <h1 id="h1">Diseño japonés que se compra por la portada</h1>
     <p>Revistas y libros de diseño en edición original, traídos de Japón y enviados desde España.</p>
-    <div class="ctas"><a class="btn gloss" href="#muro">Ver las portadas</a><a class="btn best" href="#">Best Seller · 25,65 €</a></div>
+    <div class="ctas"><a class="btn gloss" href="06-home-y2k.html#muro">Ver las portadas</a><a class="btn best" href="07-producto-dictionary.html">Best Seller · 25,65 €</a></div>
     <p class="proof"><strong>5,0</strong> de media en 238 valoraciones reales en Vinted y Etsy</p>
    </div>
    <div class="fan" aria-label="Destacados">
-    <a href="#" aria-label="POPEYE Nº950, 34,20 €" data-cover="pop950"></a>
-    <a href="#" aria-label="A Dictionary of Color Combinations · Vol. 1, 25,65 €" data-cover="dict1"></a>
-    <a href="#" aria-label="A Dictionary of Color Combinations · Vol. 2, 26,60 €" data-cover="dict2"></a>
+    <a href="08-coleccion-revistas.html" aria-label="POPEYE Nº950, 34,20 €" data-cover="pop950"></a>
+    <a href="07-producto-dictionary.html" aria-label="A Dictionary of Color Combinations · Vol. 1, 25,65 €" data-cover="dict1"></a>
+    <a href="07-producto-dictionary.html" aria-label="A Dictionary of Color Combinations · Vol. 2, 26,60 €" data-cover="dict2"></a>
    </div>
   </section>
   <section class="wrap block" id="muro" aria-labelledby="h-muro">
@@ -445,7 +450,7 @@ body{padding-bottom:var(--tb-h)}
     <div class="cart-grid">
      <div>
       <ul class="lines" data-lines aria-label="Artículos del carrito"></ul>
-      <a class="back" href="#" data-act="portadas">Seguir viendo portadas</a>
+      <a class="back" href="06-home-y2k.html#muro" data-act="portadas">Seguir viendo portadas</a>
      </div>
      <aside class="win" aria-labelledby="h-sum">
       <div class="win-bar"><h2 id="h-sum">Resumen</h2><span class="xp-ctl" aria-hidden="true"><i>_</i><i>□</i><i class="x">×</i></span></div>
@@ -454,7 +459,7 @@ body{padding-bottom:var(--tb-h)}
        <p class="sum-note">Envío: se calcula en el siguiente paso</p>
        <p class="sum-note">Impuestos incluidos</p>
        <div class="pay">
-        <a class="btn-buy lg" href="#"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Finalizar compra</span></a>
+        <a class="btn-buy lg checkout" href="#"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Finalizar compra</span></a>
         <button type="button" class="btn sec">Pagar con Shop Pay</button>
        </div>
        <ul class="trustlines">
@@ -533,10 +538,10 @@ body{padding-bottom:var(--tb-h)}
   </section>
  </div>
 </main>
-<footer class="wrap" data-bg><strong>Atlas Novus</strong><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
+<footer class="wrap" data-bg><strong>Atlas Novus</strong><a href="10-nosotros-y-ayuda.html#envios">Envíos</a><a href="10-nosotros-y-ayuda.html#devoluciones">Devoluciones</a><a href="10-nosotros-y-ayuda.html#contacto">Contacto</a><a href="#">Instagram</a><a href="#">TikTok</a></footer>
 
 <div class="taskbar" id="taskbar" role="region" aria-label="Comprar y novedades">
- <a class="tb-start" href="#">Comprar</a>
+ <a class="tb-start" href="06-home-y2k.html#muro">Comprar</a>
  <a class="tb-buy" href="#">Finalizar compra</a>
  <button class="tb-mail" type="button" aria-expanded="false" aria-controls="tb-news">Novedades por email</button>
  <form class="tb-news" id="tb-news" novalidate>
@@ -577,7 +582,7 @@ body{padding-bottom:var(--tb-h)}
    <p class="sum-note">Envío: se calcula en el siguiente paso</p>
    <p class="sum-note">Impuestos incluidos</p>
    <div class="pay">
-    <a class="btn-buy lg" href="#"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Finalizar compra</span></a>
+    <a class="btn-buy lg checkout" href="#"><svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Finalizar compra</span></a>
     <button type="button" class="btn sec">Pagar con Shop Pay</button>
    </div>
   </div>
@@ -611,6 +616,7 @@ body{padding-bottom:var(--tb-h)}
      toast=$('#toast'),tmsg=$('#toast-msg'),tact=$('#toast-act'),live=$('#live');
 
  function eur(c){return (c/100).toFixed(2).replace('.',',')+' €'}
+ function link(p){return p.k==='Revista'?'08-coleccion-revistas.html':'07-producto-dictionary.html'}
  function units(a){return a.reduce(function(n,i){return n+i.q},0)}
  function sub(a){return a.reduce(function(n,i){return n+i.q*CAT[i.id].p},0)}
  function find(id){for(var i=0;i<cart.length;i++)if(cart[i].id===id)return i;return -1}
@@ -623,16 +629,16 @@ body{padding-bottom:var(--tb-h)}
   return '<span class="'+c+(p.dark?' dark':'')+'" style="background:var(--'+p.c+')" aria-hidden="true">'+(sticker||'')+'<span class="mast">'+p.mast+'</span>'+(p.no?'<span class="no">'+p.no+'</span>':'')+(thumb?'':'<small>foto real</small>')+'</span>';
  }
  /* v6 buy button content: cart icon + label */
- var BUY='<svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Comprar</span>';
+ var BUY='<svg class="bb-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3.5h3l2.4 10.5h10.4l2.2-7.5H6.3"/><circle cx="9" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg><span class="bb-t">Añadir a la cesta</span>';
  function card(id,add,size,sticker){
   var p=CAT[id];
-  return cover(id,size,sticker)+'<h3><a href="#">'+p.n+'</a></h3><span class="p">'+eur(p.p)+'</span>'+
+  return cover(id,size,sticker)+'<h3><a href="'+link(p)+'">'+p.n+'</a></h3><span class="p">'+eur(p.p)+'</span>'+
    (add?'<button class="add btn-buy sm'+(size?' ico':'')+'" type="button" data-act="add" data-id="'+id+'"></button>':'');
  }
  function lineHTML(it){
   var p=CAT[it.id];
   return '<li class="line" data-id="'+it.id+'">'+cover(it.id,'thumb')+
-   '<div><p class="line-name"><a href="#">'+p.n+'</a></p><p class="meta">'+p.k+' · '+eur(p.p)+' / ud.</p></div>'+
+   '<div><p class="line-name"><a href="'+link(p)+'">'+p.n+'</a></p><p class="meta">'+p.k+' · '+eur(p.p)+' / ud.</p></div>'+
    '<strong class="line-total" data-total>'+eur(p.p*it.q)+'</strong>'+
    '<div class="line-ctl"><div class="qty" role="group" aria-label="Cantidad de '+p.s+'">'+
    '<button type="button" data-act="dec" aria-label="Quitar una unidad"'+(it.q<2?' aria-disabled="true"':'')+'>−</button>'+
@@ -643,7 +649,7 @@ body{padding-bottom:var(--tb-h)}
  function emptyHTML(tag){
   return '<'+tag+'>Tu carrito está vacío</'+tag+'>'+
    '<p>Todavía no has añadido nada. Elige por la portada, como en el quiosco.</p>'+
-   '<a class="btn gloss" href="#" data-act="portadas">Ver las portadas</a>'+
+   '<a class="btn gloss" href="06-home-y2k.html#muro" data-act="portadas">Ver las portadas</a>'+
    (tag==='h1'?'<h2 class="sub-h">Portadas para empezar</h2>':'<h3 class="sub-h">Portadas para empezar</h3>')+
    '<ul class="wall w4">'+
    '<li class="item">'+card('dict1',0,'sm','<span class="sticker">Best Seller</span>')+'</li>'+
@@ -664,7 +670,7 @@ body{padding-bottom:var(--tb-h)}
   $$('[data-act="add"]').forEach(function(b){
    var p=CAT[b.dataset.id],inc=find(b.dataset.id)>-1;
    b.innerHTML=inc?'✓<span class="bb-t"> Añadido</span>':BUY;b.classList.toggle('done',inc);
-   b.setAttribute('aria-label',inc?p.s+' añadido. Añadir otra unidad':'Añadir '+p.s+' al carrito');
+   b.setAttribute('aria-label',inc?p.s+' añadido. Añadir otra unidad':'Añadir '+p.s+' a la cesta');
   });
  }
  function render(){
@@ -780,6 +786,17 @@ body{padding-bottom:var(--tb-h)}
  bar.querySelectorAll('[data-click]').forEach(function(b){b.addEventListener('click',function(){var t=document.querySelector(b.dataset.click);if(t)t.click()})});
  function tick(){try{time.textContent=new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Tokyo'}).format(new Date())}catch(e){}}
  tick();setInterval(tick,30000);
+})();
+</script>
+<script>
+(function(){
+ // navigable mockup: a cover takes you where its title link goes
+ var s=document.createElement('style');s.textContent='[data-go] .cover,.item .cover,.fly-tile .cover,.line .cover{cursor:pointer}';document.head.appendChild(s);
+ document.addEventListener('click',function(e){
+  var c=e.target.closest('.cover');if(!c||c.closest('a,button'))return;
+  var box=c.closest('[data-go],.item,.fly-tile,.line'),a=box&&box.querySelector('h3 a,h4 a,.line-name a'),to=box&&(box.dataset.go||(a&&a.getAttribute('href')));
+  if(to&&to!=='#')location.href=to;
+ });
 })();
 </script>
 </body>
